@@ -4,6 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import{BsDropdownModule} from 'ngx-bootstrap/dropdown';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { soumettrecommentaireComponent } from './commentaires/soumettre-commentaire/soumettre-commentaire.component';
@@ -24,7 +27,12 @@ import {NgbdCarouselConfig} from './Carousel/carousel-config';
     FormsModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    NgbModule
+    NgbModule,
+
+    BsDropdownModule.forRoot(),
+    CarouselModule.forRoot(),
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
