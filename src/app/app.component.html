@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
 </head>
 
 <body>
 
-    <app-menu></app-menu>
+    <div class="container">
+        <div class="titre">MANIA&CO</div>
+    </div>
+
+    <div class="login">
+        <button id="inscription" type="button" routerLink="/registration">S'inscrire</button>
+        <button id="connexion" type="button" routerLink="/login">Connexion</button>
+    </div>
+
+    <button id="accueil" type="button" routerLink="/">Accueil</button>
+
+    <button class="langue" mat-button [matMenuTriggerFor]="menu0">Langue</button>
+    <mat-menu #menu0="matMenu">
+        <button mat-menu-item>Allemand</button>
+        <button mat-menu-item>Italien</button>
+        <button mat-menu-item>Anglais</button>
+    </mat-menu>
+
+    <router-outlet></router-outlet>
 
 </body>
 

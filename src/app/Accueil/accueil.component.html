@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styledheet" type="text/css" href="menu.component.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="barremenu">
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu1">Pull</button>
+        <mat-menu #menu1="matMenu">
+            <button class="choix1" mat-menu-item>Voir tout</button>
+            <button class="choix1" mat-menu-item>Sweatshirt</button>
+            <button class="choix1" mat-menu-item>Polaire</button>
+        </mat-menu>
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu2">Jupe</button>
+        <mat-menu #menu2="matMenu">
+            <button class="choix2" mat-menu-item>Voir tout</button>
+            <button class="choix2" mat-menu-item>Jupe plissée</button>
+            <button class="choix2" mat-menu-item>Jupe crayon</button>
+        </mat-menu>
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu3">Top</button>
+        <mat-menu #menu3="matMenu">
+            <button class="choix3" mat-menu-item>Voir tout</button>
+            <button class="choix3" mat-menu-item>Débardeur</button>
+            <button class="choix3" mat-menu-item>Blouse</button>
+        </mat-menu>
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu4">Robe</button>
+        <mat-menu #menu4="matMenu">
+            <button class="choix4" mat-menu-item>Voir tout</button>
+            <button class="choix4" mat-menu-item>Robe de soirée</button>
+            <button class="choix4" mat-menu-item>Robe d'été</button>
+        </mat-menu>
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu5">Veste</button>
+        <mat-menu #menu5="matMenu">
+            <button class="choix5" mat-menu-item>Voir tout</button>
+            <button class="choix5" mat-menu-item>Veste d'hiver</button>
+            <button class="choix5" mat-menu-item>Veste légère</button>
+        </mat-menu>
+        <button class="menubtn" mat-button [matMenuTriggerFor]="menu6">Pantalon</button>
+        <mat-menu #menu6="matMenu">
+            <button class="choix6" mat-menu-item>Voir tout</button>
+            <button class="choix6" mat-menu-item>Pantalon classique</button>
+            <button class="choix6" mat-menu-item>Short</button>
+        </mat-menu>
+    </div>
+
+    <carousel>
+        <slide>
+            <img src="assets/images/nature/slide1.jpg" alt="first slide" style="display: block; width: 100%;">
+            <div class="annonce">
+                <h1>Un moment spécial avec ses amis</h1>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <a routerLink="catalogue">Consulter le catalogue</a>
+            </div>
+        </slide>
+        <slide>
+            <img src="assets/images/nature/slide2.jpg" alt="second slide" style="display: block; width: 100%;">
+            <div class="annonce">
+                <h1>Vêtements & accessoires</h1>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <a routerLink="catalogue">Consulter le catalogue</a>
+            </div>
+        </slide>
+        <slide>
+            <img src="assets/images/nature/slide3.jpg" alt="third slide" style="display: block; width: 100%;">
+            <div class="annonce">
+                <h1>Pour toutes les saisons</h1>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <a routerLink="catalogue">Consulter le catalogue</a>
+            </div>
+        </slide>
+    </carousel>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+#barremenu {
+    background-color: rgb(109, 5, 21);
+    margin-top: 0%;
+    border-top: 4px solid black;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 4px solid black;
+}
+
+.menubtn {
+    border: 0.5px solid black;
+    width: 172px;
+    padding: 16px 0px;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    background-color: white;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-width: 2px solid black;
+    border-radius: 5px;
+}
+
+.menubtn:hover {
+    background: khaki;
+    cursor: pointer;
+}
+
+.annonce {
+    position: absolute;
+    font-family: sans-serif;
+    top: 20%;
+    left: 15%;
+}
+
+.annonce h1 {
+    font-size: 40px;
+    color: #000000;
+}
+
+.annonce h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #222222;
+}
+
+.annonce a {
+    display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.choix1 {
+    padding-right: 87px;
+}
+
+.choix2 {
+    padding-right: 77px;
+}
+
+.choix3 {
+    padding-right: 90px;
+}
+
+.choix4 {
+    padding-right: 62px;
+}
+
+.choix5 {
+    padding-right: 75px;
+}
+
+.choix6 {
+    padding-right: 36px;
+}
+
+.choix1:hover,
+.choix2:hover,
+.choix3:hover,
+.choix4:hover,
+.choix5:hover,
+.choix6:hover {
+    background: khaki;
+    cursor: pointer;
+}
