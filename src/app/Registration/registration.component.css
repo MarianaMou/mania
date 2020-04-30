@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-color: rgba(42, 50, 77, 0.233);
+    height: 100%;
 }
 
 .login-box {
@@ -19,8 +20,8 @@ body {
     text-align: center;
     font-size: 40px;
     border-bottom: 6px solid;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin-top: 310px;
+    margin-bottom: 20px;
     padding: 13px 0;
 }
 
