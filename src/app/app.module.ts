@@ -15,7 +15,7 @@ import {loginComponent} from './Login/login.component';
 import {registrationComponent} from './Registration/registration.component';
 import {catalogueComponent} from './Catalogue/catalogue.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import {catalogueComponent} from './Catalogue/catalogue.component';
     NgbModule,
     BsDropdownModule.forRoot(),
     CarouselModule.forRoot(),
-
+    HttpClientModule
 
   ],
   providers: [],
