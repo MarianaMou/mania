@@ -7,8 +7,7 @@
   <title>Email Validation Tutorial</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -36,18 +35,18 @@
 	<div class="form-group">
   	<i class="fa fa-unlock-alt" aria-hidden="true"></i>
   	<input type="password" id="myInput" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
-    	required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail"
+    	required  class="form-control" name="secondaryEmail"
     	[(ngModel)]="clientModel.password" />
 
   	<div *ngIf="password.errors && (password.invalid || password.touched)">
     	<small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
-    	<small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
+
   	</div>
   </div>
 
   <!--On écoute ici et on appelle la méthode onSubmit-->
   <input [disabled]="usersEmail.invalid" (click)="onSubmit()" class="btn" type="button" name="" value="Se connecter">
- 
+
   </form>
 </div>
 
