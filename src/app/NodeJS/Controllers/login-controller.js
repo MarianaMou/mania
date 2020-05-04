@@ -24,7 +24,7 @@ module.exports.login=function(req,res){
             }else{
                 res.send({
                   status:false,
-                  message:"Mot de passe ou Adresse email incorrect"
+                  message:"mot de passe ou adresse email incorrect"
                  });
             }
 
@@ -32,7 +32,7 @@ module.exports.login=function(req,res){
         else{
           res.send({
               status:false,
-            message:"L'adresse email n'existe pas"
+            message:"mot de passe ou adresse email incorrect"
           });
         }
       }

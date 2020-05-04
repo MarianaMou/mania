@@ -22,7 +22,6 @@ app.get('/api/register', registerController.register)
 
 
 
-
 //Tous les clients
 app.get('/Clients', function(req, res) {
     mysqlConnection.query('SELECT * FROM Client',
