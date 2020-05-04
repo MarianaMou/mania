@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Client} from './../client';
 import{NewClient} from './../new-client';
+import{Cataloguelist} from './../cataloguelist';
+import {Observable} from 'rxjs/Observable';
+
 
 const Options ={
 headers : new HttpHeaders({'Content-Type': 'application/json'})
@@ -21,6 +24,9 @@ export class ConnexionSService {
 
     InscriptionCli(newCli:NewClient) {
       return this.http.post<any>(this._url+'register',newCli);
+    }
+    getArticle (): Observable <Cataloguelist[]>{
+      return this.http.get<Cataloguelist[]>(this._url+'catalogue');
     }
 
 }
