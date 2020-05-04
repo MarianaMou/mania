@@ -3,56 +3,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Email Validation Tutorial</title>
-  <base href="/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 
 <body>
-<!--app.component.html-->
-<div class="login-box">
-  <form #usersEmail="ngForm"  novalidate>
-	<h1>Connexion</h1>
 
-	<div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="email" placeholder="Email"  #firstEmail="ngModel" [class.is-invalid]="firstEmail.invalid && firstEmail.touched" required
-    	pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" class="form-control" name="primaryEmail"
-    	[(ngModel)]="clientModel.email" />
 
-  	<div *ngIf="firstEmail.errors && (firstEmail.invalid || firstEmail.touched)">
-    	<small class="text-danger" *ngIf="firstEmail.errors.required">Entrer une adresse email</small>
-    	<small class="text-danger" *ngIf="firstEmail.errors.pattern">Entrer une adresse email valide</small>
-  	</div>
 
-	</div>
+    <!--app.component.html-->
+    <div class="login-box">
+        <form #usersEmail="ngForm" novalidate>
+            <h1>Connexion</h1>
 
-	<div class="form-group">
-  	<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-  	<input type="password" id="myInput" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
-    	required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail"
-    	[(ngModel)]="clientModel.password" />
 
-  	<div *ngIf="password.errors && (password.invalid || password.touched)">
-    	<small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
-    	<small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
-  	</div>
-  </div>
 
-  <!--On écoute ici et on appelle la méthode onSubmit-->
-  <input [disabled]="usersEmail.invalid" (click)="onSubmit()" class="btn" type="button" name="" value="Se connecter">
- 
-  </form>
-</div>
+            <div class="form-group">
+
+                <div *ngIf="firstEmail.errors && (firstEmail.invalid || firstEmail.touched)">
+
+
+                </div>
+                <h3>Entrer une adresse mail</h3>
+
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="email" placeholder="Email" #firstEmail="ngModel" [class.is-invalid]="firstEmail.invalid && firstEmail.touched" required pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" class="form-control" name="primaryEmail"
+                    [(ngModel)]="clientModel.email" />
+                <small class="text-danger" *ngIf="firstEmail.errors.pattern">Entrer une adresse email valide</small>
+
+
+
+            </div>
+
+            <div class="form-group">
+
+                <h3>Entrer un mot de passe</h3>
+
+                <div *ngIf="password.errors && (password.invalid || password.touched)">
+                    <small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
+                    <small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
+                </div>
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="password" id="myInput" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail" [(ngModel)]="clientModel.password" />
+
+
+            </div>
+
+            <!--On écoute ici et on appelle la méthode onSubmit-->
+            <input [disabled]="usersEmail.invalid" (click)="onSubmit()" class="btn" type="button" name="" value="Se connecter">
+
+        </form>
+    </div>
 
 
 </body>
 
 </html>
-
