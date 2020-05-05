@@ -20,7 +20,6 @@ var urlencodedParser= app.use(bodyparser.urlencoded({ extended: true }));
 app.post('/api/login',loginController.login)
 app.post('/api/register',registerController.register)
 app.get('/api/register',registerController.register)
-
 app.get('/api/catalogue',catalogueController.catalogue)
 
 
