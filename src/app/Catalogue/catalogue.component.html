@@ -1,4 +1,20 @@
-<h2>Articles List</h2>
+<h1>Catalogue</h1>
 
 
-<img [src]="imageurl" alt="">
+<ul *ngFor="let article of articles; let i = index">
+    <br>
+    <ul *ngFor="let image of images">
+
+        <li>{{article.num_reference}}</li>
+        <li>{{article.nom_article}}</li>
+        <li>{{article.prix}}</li>
+        <li>{{article.couleur}}</li>
+
+        <img src={{image}} alt="image">
+
+
+
+    </ul>
+    <br>
+</ul>
+<br>
