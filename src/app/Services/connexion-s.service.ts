@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Client} from './../client';
 import{NewClient} from './../new-client';
-import{Cataloguelist} from './../cataloguelist';
-import {Observable} from 'rxjs/Observable';
+import{Articles} from './../Catalogue/catalogue';
+import {Observable} from 'rxjs';
 
 
 const Options ={
@@ -25,8 +25,8 @@ export class ConnexionSService {
     InscriptionCli(newCli:NewClient) {
       return this.http.post<any>(this._url+'register',newCli);
     }
-    getArticle (): Observable <Cataloguelist[]>{
-      return this.http.get<Cataloguelist[]>(this._url+'catalogue');
+    getArticle (): Observable <Articles[]>{
+      return this.http.get<Articles[]>(this._url+'catalogue');
     }
 
 }

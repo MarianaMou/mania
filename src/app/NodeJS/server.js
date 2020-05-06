@@ -20,8 +20,7 @@ var urlencodedParser = app.use(bodyparser.urlencoded({ extended: true }));
 app.post('/api/login', loginController.login)
 app.post('/api/register', registerController.register)
 app.get('/api/register', registerController.register)
-
-app.get('/api/catalogue',catalogueController.catalogue)
+app.get('/api/catalogue', catalogueController.catalogue)
 
 
 //Tous les clients
@@ -54,15 +53,7 @@ app.delete('/Clients/:id', (req, res) => {
     });
 })
 
-//Tous les articles
-app.get('/Article', function(req, res) {
-    mysqlConnection.query('SELECT * FROM Article',
-        (err, rows, results) => {
-            if (!err) res.send(rows);
-            else
-                console.log(err);
-        });
-})
+
 
 
 app.listen(3000, () => console.log('Express server running at port 3000'));
