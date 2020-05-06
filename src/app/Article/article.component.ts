@@ -14,11 +14,12 @@ export class articleComponent implements OnInit{
   constructor(private _articleservice : ConnexionSService) {}
 
   ngOnInit () {
-    this._articleservice.getCommentaire()
-  .subscribe(data => this.commentaires = data);
 
   this._articleservice.getArticle()
   .subscribe(data => this.articles = data);
+
+  this._articleservice.getCommentaire()
+  .subscribe(data => this.commentaires = data);
 
   }
 }
