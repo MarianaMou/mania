@@ -3,7 +3,30 @@
 
 <div *ngFor="let article of articles; let j = index">
 
-    {{article[6].num_reference}} {{article[6].nom_article}} {{article[6].categorie}} {{article[6].sous_categorie}} {{article[6].couleur}} {{article[6].prix}}
+    <div *ngIf="j==6">
+        <ul style="list-style-type: none;">
+            <li>
+                <h1>{{article.nom_article}}</h1>
+            </li>
+            <li>N° référence: {{article.num_reference}} </li>
+            <li>Catégorie: {{article.categorie}}</li>
+            <li>Sous-catégorie: {{article.sous_categorie}}</li>
+            <li>Couleur: {{article.couleur}}</li>
+            <li>Prix: {{article.prix}}</li>
+            <button mat-raised-button color="primary">Commander</button>
+        </ul>
+    </div>
 
+</div>
+<div>
+    <h1>Avis</h1>
+    <div *ngFor="let commentaire of commentaires">
 
+        <li>{{commentaire.id_avis}} </li>
+        <li>{{commentaire.num_client}}</li>
+        <li>{{commentaire.commentaire}}</li>
+        <li>{{commentaire.nb_etoile}}</li>
+        <li>{{commentaire.date_avis}}</li>
+
+    </div>
 </div>

@@ -5,6 +5,7 @@ const bodyparser = require('body-parser');
 var loginController = require('./Controllers/login-controller');
 var registerController = require('./Controllers/register-controller');
 var catalogueController = require('./Controllers/catalogue-controller');
+var commentaireController = require('./Controllers/commentaire-controller')
 var mysqlConnection = require('./config');
 
 app.use(bodyparser.json());
@@ -21,6 +22,7 @@ app.post('/api/login', loginController.login)
 app.post('/api/register', registerController.register)
 app.get('/api/register', registerController.register)
 app.get('/api/catalogue', catalogueController.catalogue)
+app.get('/api/commentaire', commentaireController.commentaire)
 
 
 //Tous les clients

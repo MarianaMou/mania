@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Client} from './../client';
 import{NewClient} from './../new-client';
 import{Articles} from './../Catalogue/catalogue';
+import{Commentaires} from './../Article/commentaire';
 import {Observable} from 'rxjs';
 
 
@@ -25,8 +26,12 @@ export class ConnexionSService {
     InscriptionCli(newCli:NewClient) {
       return this.http.post<any>(this._url+'register',newCli);
     }
+
     getArticle (): Observable <Articles[]>{
       return this.http.get<Articles[]>(this._url+'catalogue');
+    }
+    getCommentaire (): Observable <Commentaires[]>{
+      return this.http.get<Commentaires[]>(this._url+'commentaire');
     }
 
 }
