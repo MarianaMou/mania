@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit, Input } from '@angular/core';
 import {ConnexionSService} from './../Services/connexion-s.service';
 
 @Component({
@@ -9,6 +9,10 @@ import {ConnexionSService} from './../Services/connexion-s.service';
 export class articleComponent implements OnInit{
   public articles=[]
   public commentaires = [];
+  public affichercommentaires=[];
+  stars = [1, 2, 3, 4, 5];
+  rating = 0;
+  hoverState = 0;
 
 
   constructor(private _articleservice : ConnexionSService) {}
@@ -21,5 +25,20 @@ export class articleComponent implements OnInit{
   this._articleservice.getCommentaire()
   .subscribe(data => this.commentaires = data);
 
+
+  }
+  enter(i) {
+    this.hoverState = i;
+  }
+
+  leave() {
+    this.hoverState = 0;
+  }
+
+  updateRating(i) {
+    this.rating = i;
   }
 }
+
+
+

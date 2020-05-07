@@ -25,6 +25,7 @@ import {registrationComponent} from './Registration/registration.component';
 import {catalogueComponent} from './Catalogue/catalogue.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import{articleComponent} from "./Article/article.component"
+import{etoileComponent} from "./Etoile/etoile.component";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     registrationComponent,
     catalogueComponent,
     articleComponent,
+    etoileComponent,
 
   ],
   imports: [

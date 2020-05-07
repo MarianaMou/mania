@@ -10,3 +10,28 @@ li {
 ul {
     margin-bottom: 60px;
 }
+
+.btn {
+    float: right;
+    margin-right: 15%;
+}
+
+.example-card {
+    position: absolute;
+    width: 46.7%;
+    left: 36.8%;
+    top: 95%;
+}
+
+.titre {
+    display: inline;
+}
+
+h1 {
+    display: inline-block;
+}
+
+.App {
+    display: inline-block;
+    margin-left: 30%;
+}
