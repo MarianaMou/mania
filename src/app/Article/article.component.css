@@ -12,15 +12,13 @@ ul {
 }
 
 .btn {
-    float: right;
-    margin-right: 15%;
+    position: absolute;
+    margin-left: 43%;
+    margin-top: -2%;
 }
 
 .example-card {
-    position: absolute;
-    width: 46.7%;
-    left: 36.8%;
-    top: 100%;
+    margin-top: 10px;
 }
 
 .titre {
@@ -33,5 +31,9 @@ h1 {
 
 .App {
     display: inline-block;
-    margin-left: 30%;
+    margin-left: 29%;
+}
+
+textarea {
+    margin-bottom: 30px;
 }

@@ -24,7 +24,7 @@
     <div class="App">
         <div class="flex-container">
             <ng-container *ngFor="let star of stars">
-                <app-etoile  [starId]="star" [rating]="hoverState || rating" (enter)="enter($event)" (leave)="leave()" (bigClick)="updateRating(star)">
+                <app-etoile [starId]="star" [rating]="hoverState || rating" (enter)="enter($event)" (leave)="leave()" (bigClick)="updateRating(star)">
                 </app-etoile>
 
             </ng-container>
@@ -33,24 +33,26 @@
 
 
     <div>
-        <textarea rows="8" cols="100"  #commentaire="ngModel"	ngDefaultControl [(ngModel)]="newSoumettre_avisModel.commentaire"></textarea>
+        <textarea rows="8" cols="100" #commentaire="ngModel" ngDefaultControl [(ngModel)]="newSoumettre_avisModel.commentaire"></textarea>
         <br>
         <button class="btn" (click)="onSubmit_avis()" mat-raised-button>Envoyer</button>
     </div>
     <div *ngFor="let commentaire of commentaires">
+        <div fxLayout="column">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>
+                        Commenté par {{commentaire.nom}} {{commentaire.prenom}}, le {{commentaire.date}}
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{commentaire.commentaire}}
+                    <br> Nombre d'étoiles: {{commentaire.nb_etoile}} /5
+                </mat-card-content>
 
-        <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title>
-                    Commenté par {{commentaire.nom}} {{commentaire.prenom}}, le {{commentaire.date}}
-                </mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                {{commentaire.commentaire}}
-                <br> Nombre d'étoiles: {{commentaire.nb_etoile}} /5
-            </mat-card-content>
+            </mat-card>
+        </div>
 
-        </mat-card>
 
 
 
