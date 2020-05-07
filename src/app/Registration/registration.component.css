@@ -5,13 +5,13 @@ body {
     font-family: sans-serif;
     background-color: rgba(42, 50, 77, 0.233);
 
-    height: 1200px;
+    height: 1000px;
 }
 
 .login-box {
     width: 280px;
     position: absolute;
-    top: 79%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;

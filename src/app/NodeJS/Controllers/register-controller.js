@@ -62,7 +62,7 @@ console.log(req.body);
         }
 else {// nouvelle adresse
   mysqlConnection.beginTransaction(function(err) {
-console.log("ça rentre");
+
     if (err) { throw err; }
     var sql2 = "INSERT INTO Adresse(rue,num_rue,ville,code_postal) VALUES (?)"
     var values2 = [rue,num_rue,ville,code_postal];
@@ -78,7 +78,7 @@ console.log("ça rentre");
 
 
     if (err) throw err;
-    console.log(result);  //affiche id correspond à l'adresse
+   // console.log(result);
 
        Object.keys(result).forEach(function(key) {
            var row = result[key];

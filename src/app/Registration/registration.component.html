@@ -23,7 +23,7 @@
     	 class="form-control" name="prenom"
     	[(ngModel)]="newClientModel.prenom" />
 
-  	<div *ngIf="prenom.errors && (prenom.invalid || prenom.touched)">
+  	<div *ngIf="prenom.errors && (prenom.invalid && prenom.touched)">
     	<small class="text-danger" *ngIf="prenom.errors.required">Entrer votre prénom</small>
 
   	</div>
@@ -36,7 +36,7 @@
     	required  class="form-control" name="nom"
     	[(ngModel)]="newClientModel.nom" />
 
-  	<div *ngIf="nom.errors && (nom.invalid || nom.touched)">
+  	<div *ngIf="nom.errors && (nom.invalid && nom.touched)">
     	<small class="text-danger" *ngIf="nom.errors.required">Entrer votre nom</small>
 
   	</div>
@@ -50,7 +50,7 @@
     	required class="form-control" name="rue"
     	[(ngModel)]="newClientModel.rue" />
 
-  	<div *ngIf="rue.errors && (rue.invalid || rue.touched)">
+  	<div *ngIf="rue.errors && (rue.invalid && rue.touched)">
     	<small class="text-danger" *ngIf="rue.errors.required">Entrer une rue</small>
 
   	</div>
@@ -63,7 +63,7 @@
     required class="form-control" name="num_rue"
     	[(ngModel)]="newClientModel.num_rue" />
 
-  	<div *ngIf="num_rue.errors && (num_rue.invalid || num_rue.touched)">
+  	<div *ngIf="num_rue.errors && (num_rue.invalid && num_rue.touched)">
     	<small class="text-danger" *ngIf="num_rue.errors.required">Entrer le numéro de la rue</small>
 
   	</div>
@@ -76,7 +76,7 @@
     	required class="form-control" name="code_postal"
     	[(ngModel)]="newClientModel.code_postal" />
 
-  	<div *ngIf="code_postal.errors && (code_postal.invalid || code_postal.touched)">
+  	<div *ngIf="code_postal.errors && (code_postal.invalid && code_postal.touched)">
     	<small class="text-danger" *ngIf="code_postal.errors.required">Entrer votre code postal</small>
 
   	</div>
@@ -89,7 +89,7 @@
     	required  class="form-control" name="secondaryEmail"
     	[(ngModel)]="newClientModel.ville" />
 
-  	<div *ngIf="ville.errors && (ville.invalid || ville.touched)">
+  	<div *ngIf="ville.errors && (ville.invalid && ville.touched)">
     	<small class="text-danger" *ngIf="ville.errors.required">Entrer une ville</small>
 
   	</div>
@@ -102,7 +102,7 @@
     	required pattern="^[0-9]{1,45}$"  class="form-control" name="tel"
     	[(ngModel)]="newClientModel.tel" />
 
-  	<div *ngIf="tel.errors && (tel.invalid || tel.touched)">
+  	<div *ngIf="tel.errors && (tel.invalid && tel.touched)">
     	<small class="text-danger" *ngIf="tel.errors.required">Entrer votre numéro de téléphone</small>
     	<small class="text-danger" *ngIf="tel.errors.pattern">Entrer un numéro valide</small>
   	</div>
@@ -115,7 +115,7 @@
     	pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" class="form-control" name="primaryEmail"
     	[(ngModel)]="newClientModel.email" />
 
-  	<div *ngIf="firstEmail.errors && (firstEmail.invalid || firstEmail.touched)">
+  	<div *ngIf="firstEmail.errors && (firstEmail.invalid && firstEmail.touched)">
     	<small class="text-danger" *ngIf="firstEmail.errors.required">Entrer une adresse email</small>
     	<small class="text-danger" *ngIf="firstEmail.errors.pattern">Entrer une adresse email valide</small>
   	</div>
@@ -128,13 +128,13 @@
     	required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail"
     	[(ngModel)]="newClientModel.password" />
 
-  	<div *ngIf="password.errors && (password.invalid || password.touched)">
+  	<div *ngIf="password.errors && (password.invalid && password.touched)">
     	<small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
     	<small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
   	</div>
   </div>
   <!--On écoute ici et on appelle la méthode onSubmit-->
-  <input [disabled]="usersEmail.invalid" (click)="onSubmit()"  class="btn" type="button" name="" value="Se connecter">
+  <input [disabled]="usersEmail.invalid" (click)="onSubmit()"  class="btn" type="button" name="" value="S'inscrire">
   </form>
 </div>
 

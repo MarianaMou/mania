@@ -17,7 +17,6 @@ module.exports.avis = function(req, res) {
     var nb_etoile = req.body.nb_etoile;
     var date_avis = today;
 
-
     var sql = "INSERT INTO Avis(num_client,num_reference,commentaire,nb_etoile,date_avis) VALUES (?)";
     var values = [num_client, num_reference, commentaire, nb_etoile, date_avis];
     mysqlConnection.query(sql, [values], function(error, results) {

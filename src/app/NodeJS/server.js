@@ -25,7 +25,7 @@ app.get('/api/register', registerController.register)
 app.get('/api/catalogue', catalogueController.catalogue)
 app.get('/api/commentaire', commentaireController.commentaire)
 
-
+app.post('/api/soumettre_avis',avisController.avis)
 
 app.get('/Avis', function(req, res) {
     mysqlConnection.query('SELECT nom,prenom,commentaire,nb_etoile,DATE_FORMAT(date_avis,"%d-%m-%Y") as Date FROM Avis INNER JOIN Client WHERE Avis.num_client=Client.id_client AND Avis.num_reference="CLK21C01J-G11"',

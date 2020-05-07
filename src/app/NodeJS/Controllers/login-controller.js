@@ -4,7 +4,7 @@ var mysqlConnection = require('./../config');
 module.exports.login=function(req,res){
     var email=req.body.email;
     var mot_de_passe=req.body.password;
-    console.log(req.body);
+   
 
     //res.status(200).send({"message":"Donnée reçu"});
     mysqlConnection.query('SELECT * FROM Client WHERE email = ?',[email], function (error, results, fields) {

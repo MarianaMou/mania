@@ -17,7 +17,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { soumettrecommentaireComponent } from './commentaires/soumettre-commentaire/soumettre-commentaire.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {accueilComponent} from './Accueil/accueil.component';
 import {loginComponent} from './Login/login.component';
@@ -26,13 +26,12 @@ import {catalogueComponent} from './Catalogue/catalogue.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import{articleComponent} from "./Article/article.component"
 import{etoileComponent} from "./Etoile/etoile.component";
-
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    soumettrecommentaireComponent,
+
     accueilComponent,
     loginComponent,
     registrationComponent,
@@ -60,6 +59,7 @@ import { HttpClientModule } from '@angular/common/http';
     FlexLayoutModule,
     MatIconModule,
     MatGridListModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
