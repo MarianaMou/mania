@@ -27,6 +27,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import{articleComponent} from "./Article/article.component"
 import{etoileComponent} from "./Etoile/etoile.component";
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatGridListModule,
 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,9 +14,13 @@ headers : new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class ConnexionSService {
+  
 
   _url='http://localhost:3000/api/';
   constructor(private http:HttpClient) {}
+
+
+
 
 //ici on fait la requête http et envoie les données au serveur
     connexionCli(client:Client) {

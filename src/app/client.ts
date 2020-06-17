@@ -4,5 +4,5 @@ export class Client {
     public password : String,
 
   ){}
-  
+static client : Client;
 }
