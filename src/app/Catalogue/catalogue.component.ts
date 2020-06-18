@@ -26,10 +26,11 @@ ngOnInit () {
   this._articleservice.getArticle()
   .subscribe(data => this.articles = data);
 
-  ;
-  this.cookieValue = this.cookieService.get('ouioui');
-  console.log(this.cookieValue)
-  this.Bool= (this.cookieValue === 'true');
+
+ // this.cookieValue = this.cookieService.get('Email'); // ici, par exemple, on a accès à l'email de l'utilisateur.
+  this.cookieService.set('Se connecter','true');
+  this.cookieValue = this.cookieService.get('Se connecter');
+  console.log(this.cookieValue);
 
 }
 

@@ -41,7 +41,6 @@ export class loginComponent {
    //Client.client = this.clientModel;
 
 
-   window.alert("Voici les info sur le client "+Client.client.email+"ettt "+Client.client.password);
 
  this.router.navigate(['/catalogue']); // on ouvre une nouvelle page si c'est correcte
  //coookies, nous permet de stocker des informations pour pouvoir les utiliser plus tard
