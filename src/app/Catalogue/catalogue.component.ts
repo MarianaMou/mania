@@ -13,19 +13,23 @@ import { CookieService } from 'ngx-cookie-service';
 
 })
 export class catalogueComponent implements OnInit{
-private cookieValue : String;
+public cookieValue : String ;
+public Bool :boolean;
 public articles = [];
 
 
-constructor(private _articleservice : ConnexionSService,private cookieService: CookieService) {}
+constructor(private _articleservice : ConnexionSService,private cookieService: CookieService) {
+
+}
 
 ngOnInit () {
   this._articleservice.getArticle()
   .subscribe(data => this.articles = data);
 
-
-  this.cookieValue = this.cookieService.get('Email'); // ici, par exemple, on a accès à l'email de l'utilisateur.
-  console.log(this.cookieValue);
+  ;
+  this.cookieValue = this.cookieService.get('ouioui');
+  console.log(this.cookieValue)
+  this.Bool= (this.cookieValue === 'true');
 
 }
 

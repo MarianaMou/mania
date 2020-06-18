@@ -22,7 +22,9 @@ export class loginComponent {
 
 
   constructor(private _connexionService:ConnexionSService,private router: Router,private cookieService: CookieService){
+    this.cookieService.set('ouioui','true');
   }
+
 
 
 //la méthode onSubmit appelle connexionCli méthode en passant clientModel, c'est ce que l'utilisateur a entré
@@ -40,11 +42,12 @@ export class loginComponent {
 
 
    window.alert("Voici les info sur le client "+Client.client.email+"ettt "+Client.client.password);
-   
+
  this.router.navigate(['/catalogue']); // on ouvre une nouvelle page si c'est correcte
  //coookies, nous permet de stocker des informations pour pouvoir les utiliser plus tard
  this.cookieService.set('Email',<string>this.clientModel.email); //écrit la valeur dans le navigateur,c'est comme une base de donnée interne, prends 2 valeurs en parallèle
  this.cookieService.set('Password',<string>this.clientModel.password);
+
 
 // this.cookieValue = this.cookieService.get('Email');// consulter dans le navigateur pour récuperer valeur, utiliser seulement quand on veut utiliser les valeurs dans les autres pages
  //this.cookieService.delete('Email');// effacer l'attribut email avec sa valeur; utiliser au moment du logout.
@@ -57,6 +60,7 @@ export class loginComponent {
   }
 
   }
+
 
   getStatus(Status:boolean) {  // dans cette méthode, on affecte la réponse à la nouvelle variable
  this.Resultat =<boolean>Status;

@@ -12,30 +12,30 @@
 
 
     <div *ngFor="let article of articles; let j = index">
-
-
-
-                <mat-card class="example-card">
-                    <mat-card-header>
-                        <mat-card-title>
-                            {{article.nom_article}}
-                            <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>
+                    {{article.nom_article}}
+                    <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">
                               <mat-icon >favorite</mat-icon>
                             </button>
-                        </mat-card-title>
+                </mat-card-title>
 
-                    </mat-card-header>
-                    <img class="clickable" routerLink="/article" mat-card-image src={{article.Image}} alt="image">
-                    <mat-card-content>
-                        <ul style="list-style-type:none">
-                            <li>Prix: {{article.prix}}CHF</li>
-                        </ul>
-                    </mat-card-content>
+            </mat-card-header>
+            <img class="clickable" routerLink="/article" mat-card-image src={{article.Image}} alt="image">
+            <mat-card-content>
+                <div *ngIf="Bool">
+                    <ul style="list-style-type:none">
+                        <li>Prix: {{article.prix}}CHF</li>
+                    </ul>
+                </div>
 
-                </mat-card>
+            </mat-card-content>
+
+        </mat-card>
 
 
-            </div>
+    </div>
 
 
 
