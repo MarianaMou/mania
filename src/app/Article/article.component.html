@@ -1,10 +1,11 @@
-<img src="./../../assets/images/nature/listeArticle/robe-de-soirée-rouge.jpg " alt="">
+<!--<img src="./../../assets/images/nature/listeArticle/robe-de-soirée-rouge.jpg " alt="">-->
 
 
 <div *ngFor="let article of articles; let j = index">
 
-    <div *ngIf="j==6">
+    <div *ngIf="article.num_reference==id">
         <ul style="list-style-type: none;">
+          <img src={{article.Image}} alt="image">
             <li>
                 <h1>{{article.nom_article}}</h1>
             </li>
@@ -13,6 +14,7 @@
             <li>Sous-catégorie: {{article.sous_categorie}}</li>
             <li>Couleur: {{article.couleur}}</li>
             <li>Prix: {{article.prix}}</li>
+
             <button mat-raised-button color="primary">Commander</button>
         </ul>
     </div>

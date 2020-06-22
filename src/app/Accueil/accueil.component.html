@@ -12,40 +12,48 @@
     <div id="barremenu">
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu1">Pull</button>
         <mat-menu #menu1="matMenu">
-            <button class="choix1" mat-menu-item>Voir tout</button>
-            <button class="choix1" mat-menu-item>Sweatshirt</button>
-            <button class="choix1" mat-menu-item>Polaire</button>
+            <button  (click)="onSubmit1()"class="choix1" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmit2()" class="choix1" mat-menu-item>Sweatshirt</button>
+            <button (click)="onSubmit3()"class="choix1" mat-menu-item>Polaire</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu2">Jupe</button>
         <mat-menu #menu2="matMenu">
-            <button class="choix2" mat-menu-item>Voir tout</button>
-            <button class="choix2" mat-menu-item>Jupe plissée</button>
-            <button class="choix2" mat-menu-item>Jupe crayon</button>
+            <button (click)="onSubmitt1()" class="choix2" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmitt2()"class="choix2" mat-menu-item>Jupe plissée</button>
+            <button (click)="onSubmitt3()"class="choix2" mat-menu-item>Jupe crayon</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu3">Top</button>
         <mat-menu #menu3="matMenu">
-            <button class="choix3" mat-menu-item>Voir tout</button>
-            <button class="choix3" mat-menu-item>Débardeur</button>
-            <button class="choix3" mat-menu-item>Blouse</button>
+            <button (click)="onSubmittt1()"class="choix3" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmittt2()"class="choix3" mat-menu-item>Débardeur</button>
+            <button (click)="onSubmittt3()"class="choix3" mat-menu-item>Blouse</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu4">Robe</button>
         <mat-menu #menu4="matMenu">
-            <button class="choix4" mat-menu-item>Voir tout</button>
-            <button class="choix4" mat-menu-item>Robe de soirée</button>
-            <button class="choix4" mat-menu-item>Robe d'été</button>
+            <button (click)="onSubmitttt1()" class="choix4" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmitttt2()"class="choix4" mat-menu-item>Robe de soirée</button>
+            <button (click)="onSubmitttt3()"class="choix4" mat-menu-item>Robe d'été</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu5">Veste</button>
         <mat-menu #menu5="matMenu">
-            <button class="choix5" mat-menu-item>Voir tout</button>
-            <button class="choix5" mat-menu-item>Veste d'hiver</button>
-            <button class="choix5" mat-menu-item>Veste légère</button>
+            <button (click)="onSubmittttt1()"class="choix5" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmittttt2()"class="choix5" mat-menu-item>Veste d'hiver</button>
+            <button (click)="onSubmittttt3()"class="choix5" mat-menu-item>Veste légère</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu6">Pantalon</button>
         <mat-menu #menu6="matMenu">
-            <button class="choix6" mat-menu-item>Voir tout</button>
-            <button class="choix6" mat-menu-item>Pantalon classique</button>
-            <button class="choix6" mat-menu-item>Short</button>
+            <button (click)="onSubmitttttt1()"class="choix6" mat-menu-item>Voir tout</button>
+            <button (click)="onSubmitttttt2()"class="choix6" mat-menu-item>Pantalon classique</button>
+            <button (click)="onSubmitttttt3()"class="choix6" mat-menu-item>Short</button>
         </mat-menu>
+    </div>
+
+
+     <div *ngFor="let article of articles; let j = index">
+      <h2>{{article.categorie}} </h2>
+      <h2>{{article.prix}} </h2>
+      <h2>{{article.nom_article}} </h2>
+      <img class="clickable" [routerLink]="['/article', article.num_reference]" mat-card-image src={{article.Image}} alt="image">
     </div>
 
     <carousel>

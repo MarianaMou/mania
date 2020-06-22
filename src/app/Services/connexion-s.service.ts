@@ -6,6 +6,9 @@ import{Articles} from './../Catalogue/catalogue';
 import{Commentaires} from './../Article/commentaire';
 import {Observable} from 'rxjs';
 import{SoumettreAvis} from './../soumettre-avis';
+import{articlegroupe} from '../Accueil/articlegroupe';
+import { CommentNumRef } from '../Article/CommentNumRef';
+
 
 const Options ={
 headers : new HttpHeaders({'Content-Type': 'application/json'})
@@ -14,7 +17,7 @@ headers : new HttpHeaders({'Content-Type': 'application/json'})
   providedIn: 'root'
 })
 export class ConnexionSService {
-  
+
 
   _url='http://localhost:3000/api/';
   constructor(private http:HttpClient) {}
@@ -34,9 +37,74 @@ export class ConnexionSService {
     getArticle (): Observable <Articles[]>{
       return this.http.get<Articles[]>(this._url+'catalogue');
     }
-    getCommentaire (): Observable <Commentaires[]>{
-      return this.http.get<Commentaires[]>(this._url+'commentaire');
+   //Pull
+    getAllpull (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'pull');
     }
+    getSweatshirt() : Observable <articlegroupe[]> {
+      return this.http.get<articlegroupe[]>(this._url+'sweatshirt');
+    }
+    getPolaire() : Observable <articlegroupe[]> {
+      return this.http.get<articlegroupe[]>(this._url+'polaire');
+    }
+
+    //Jupe
+    getAlljupe (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'jupe');
+    }
+    getPlissée() : Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'plisse');
+    }
+    getCrayon() : Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'crayon');
+    }
+
+    //Top
+    getAlltop (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'top');
+    }
+    getDébardeur (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'debardeur');
+    }
+    getBlouse (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'blouse');
+    }
+
+    //Robe
+    getAllrobe  (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'robe');
+    }
+    getSoirée  (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'soire');
+    }
+    getEté  (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'ete');
+    }
+
+    //Veste
+    getAllveste  (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'veste');
+    }
+    getHiver (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'vestehiver');
+    }
+    getLégère (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'vestelegere');
+    }
+
+    //Pantalon
+    getAllpantalon  (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'pantalon');
+    }
+    getClassique (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'classique');
+    }
+    getShort (): Observable <articlegroupe[]>{
+      return this.http.get<articlegroupe[]>(this._url+'short');
+    }
+    getCommentaire(comment:CommentNumRef) {
+      return this.http.post<any>(this._url+'commentaire',comment);
+      }
 
 SoumettreAvis(avis:SoumettreAvis) {
   return this.http.post<any>(this._url+'soumettre_avis',avis);

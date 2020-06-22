@@ -1,5 +1,6 @@
 var mysqlConnection = require('./../config');
 
+
 module.exports.register=function(req,res){
 const value= Math.floor(100000 + Math.random() * 900000);
 
