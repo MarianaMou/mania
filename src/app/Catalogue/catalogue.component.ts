@@ -31,6 +31,12 @@ ngOnInit () {
 
 
 
+  //this.cookieValue = this.cookieService.get('Connecte'); // ici, par exemple, on a accès à l'email de l'utilisateur.
+  //this.cookieService.set('Se connecter','true');
+  //this.cookieValue = this.cookieService.get('Se connecter');
+
+  //console.log(this.cookieValue);
+
 }
 
 

@@ -5,5 +5,6 @@ export interface Commentaires {
   commentaire: string;
   nb_etoile: number;
   date: string;
+  
 
   }

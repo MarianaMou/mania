@@ -22,7 +22,7 @@
                 </mat-card-title>
 
             </mat-card-header>
-            <img class="clickable" routerLink="/article" mat-card-image src={{article.Image}} alt="image">
+            <img class="clickable" [routerLink]="['/article', article.num_reference]" mat-card-image src={{article.Image}} alt="image">
             <mat-card-content>
                 <div>
                     <ul style="list-style-type:none">

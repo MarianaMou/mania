@@ -11,8 +11,8 @@ module.exports.avis = function(req, res) {
     today = yyyy + '-' + mm + '-' + dd;
 
 
-    var num_client = 658229;
-    var num_reference = "CLK21C01J-G11";
+    var num_client = req.body.num_client;
+    var num_reference = req.body.num_reference;
     var commentaire = req.body.commentaire;
     var nb_etoile = req.body.nb_etoile;
     var date_avis = today;
