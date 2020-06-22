@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import{BsDropdownModule} from 'ngx-bootstrap/dropdown';
 
+
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -17,6 +18,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {profilComponent} from './Profil/profil.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {accueilComponent} from './Accueil/accueil.component';
@@ -28,6 +30,7 @@ import{articleComponent} from "./Article/article.component"
 import{etoileComponent} from "./Etoile/etoile.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {commandeComponent} from './Commande/commande.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { CookieService } from 'ngx-cookie-service';
     catalogueComponent,
     articleComponent,
     etoileComponent,
+    profilComponent,
+    commandeComponent,
 
   ],
   imports: [

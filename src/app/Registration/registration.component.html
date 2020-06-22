@@ -2,144 +2,126 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Email Validation Tutorial</title>
-  <base href="/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>Email Validation Tutorial</title>
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
 <body>
-<!--app.component.html-->
-<div class="login-box">
-  <form #usersEmail="ngForm"  novalidate>
-	<h1>Inscription</h1>
+    <!--app.component.html-->
+    <div class="login-box">
+        <form #usersEmail="ngForm" novalidate>
+            <h1>Inscription</h1>
 
-	<div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="text" placeholder="Prénom"  #prenom="ngModel" [class.is-invalid]="prenom.invalid && prenom.touched" required
-    	 class="form-control" name="prenom"
-    	[(ngModel)]="newClientModel.prenom" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="Prénom" #prenom="ngModel" [class.is-invalid]="prenom.invalid && prenom.touched" required class="form-control" name="prenom" [(ngModel)]="newClientModel.prenom" />
 
-  	<div *ngIf="prenom.errors && (prenom.invalid && prenom.touched)">
-    	<small class="text-danger" *ngIf="prenom.errors.required">Entrer votre prénom</small>
+                <div *ngIf="prenom.errors && (prenom.invalid && prenom.touched)">
+                    <small class="text-danger" *ngIf="prenom.errors.required">Entrer votre prénom</small>
 
-  	</div>
+                </div>
 
-	</div>
+            </div>
 
-	<div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="text"  placeholder="Nom" #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched"
-    	required  class="form-control" name="nom"
-    	[(ngModel)]="newClientModel.nom" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="Nom" #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched" required class="form-control" name="nom" [(ngModel)]="newClientModel.nom" />
 
-  	<div *ngIf="nom.errors && (nom.invalid && nom.touched)">
-    	<small class="text-danger" *ngIf="nom.errors.required">Entrer votre nom</small>
+                <div *ngIf="nom.errors && (nom.invalid && nom.touched)">
+                    <small class="text-danger" *ngIf="nom.errors.required">Entrer votre nom</small>
 
-  	</div>
-  </div>
+                </div>
+            </div>
 
 
 
-  <div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="text"  placeholder="Rue" #rue="ngModel" [class.is-invalid]="rue.invalid && rue.touched"
-    	required class="form-control" name="rue"
-    	[(ngModel)]="newClientModel.rue" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="Rue" #rue="ngModel" [class.is-invalid]="rue.invalid && rue.touched" required class="form-control" name="rue" [(ngModel)]="newClientModel.rue" />
 
-  	<div *ngIf="rue.errors && (rue.invalid && rue.touched)">
-    	<small class="text-danger" *ngIf="rue.errors.required">Entrer une rue</small>
+                <div *ngIf="rue.errors && (rue.invalid && rue.touched)">
+                    <small class="text-danger" *ngIf="rue.errors.required">Entrer une rue</small>
 
-  	</div>
-  </div>
+                </div>
+            </div>
 
 
-  <div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="number"  placeholder="N° Rue" #num_rue="ngModel" [class.is-invalid]="num_rue.invalid && num_rue.touched"
-    required class="form-control" name="num_rue"
-    	[(ngModel)]="newClientModel.num_rue" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="number" placeholder="N° Rue" #num_rue="ngModel" [class.is-invalid]="num_rue.invalid && num_rue.touched" required class="form-control" name="num_rue" [(ngModel)]="newClientModel.num_rue" />
 
-  	<div *ngIf="num_rue.errors && (num_rue.invalid && num_rue.touched)">
-    	<small class="text-danger" *ngIf="num_rue.errors.required">Entrer le numéro de la rue</small>
+                <div *ngIf="num_rue.errors && (num_rue.invalid && num_rue.touched)">
+                    <small class="text-danger" *ngIf="num_rue.errors.required">Entrer le numéro de la rue</small>
 
-  	</div>
-  </div>
+                </div>
+            </div>
 
 
-  <div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="number"  placeholder="Code postal" #code_postal="ngModel" [class.is-invalid]="code_postal.invalid && code_postal.touched"
-    	required class="form-control" name="code_postal"
-    	[(ngModel)]="newClientModel.code_postal" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="number" placeholder="Code postal" #code_postal="ngModel" [class.is-invalid]="code_postal.invalid && code_postal.touched" required class="form-control" name="code_postal" [(ngModel)]="newClientModel.code_postal" />
 
-  	<div *ngIf="code_postal.errors && (code_postal.invalid && code_postal.touched)">
-    	<small class="text-danger" *ngIf="code_postal.errors.required">Entrer votre code postal</small>
+                <div *ngIf="code_postal.errors && (code_postal.invalid && code_postal.touched)">
+                    <small class="text-danger" *ngIf="code_postal.errors.required">Entrer votre code postal</small>
 
-  	</div>
-  </div>
+                </div>
+            </div>
 
 
-  <div class="form-group">
-  	<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-  	<input type="text"  placeholder="Ville" #ville="ngModel" [class.is-invalid]="ville.invalid && ville.touched"
-    	required  class="form-control" name="secondaryEmail"
-    	[(ngModel)]="newClientModel.ville" />
+            <div class="form-group">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <input type="text" placeholder="Ville" #ville="ngModel" [class.is-invalid]="ville.invalid && ville.touched" required class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.ville" />
 
-  	<div *ngIf="ville.errors && (ville.invalid && ville.touched)">
-    	<small class="text-danger" *ngIf="ville.errors.required">Entrer une ville</small>
+                <div *ngIf="ville.errors && (ville.invalid && ville.touched)">
+                    <small class="text-danger" *ngIf="ville.errors.required">Entrer une ville</small>
 
-  	</div>
-  </div>
+                </div>
+            </div>
 
 
-  <div class="form-group">
-    <i class="fa fa-mobile" aria-hidden="true"></i>
-  	<input type="number" placeholder="Téléphone" #tel="ngModel" [class.is-invalid]="tel.invalid && tel.touched"
-    	required pattern="^[0-9]{1,45}$"  class="form-control" name="tel"
-    	[(ngModel)]="newClientModel.tel" />
+            <div class="form-group">
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+                <input type="number" placeholder="Téléphone" #tel="ngModel" [class.is-invalid]="tel.invalid && tel.touched" required pattern="^[0-9]{1,45}$" class="form-control" name="tel" [(ngModel)]="newClientModel.tel" />
 
-  	<div *ngIf="tel.errors && (tel.invalid && tel.touched)">
-    	<small class="text-danger" *ngIf="tel.errors.required">Entrer votre numéro de téléphone</small>
-    	<small class="text-danger" *ngIf="tel.errors.pattern">Entrer un numéro valide</small>
-  	</div>
-  </div>
+                <div *ngIf="tel.errors && (tel.invalid && tel.touched)">
+                    <small class="text-danger" *ngIf="tel.errors.required">Entrer votre numéro de téléphone</small>
+                    <small class="text-danger" *ngIf="tel.errors.pattern">Entrer un numéro valide</small>
+                </div>
+            </div>
 
 
-  <div class="form-group">
-  	<i class="fa fa-envelope"  aria-hidden="true"></i>
-  	<input type="email" placeholder="Email"  #firstEmail="ngModel" [class.is-invalid]="firstEmail.invalid && firstEmail.touched" required
-    	pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" class="form-control" name="primaryEmail"
-    	[(ngModel)]="newClientModel.email" />
+            <div class="form-group">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <input type="email" placeholder="Email" #firstEmail="ngModel" [class.is-invalid]="firstEmail.invalid && firstEmail.touched" required pattern="^([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))$" class="form-control" name="primaryEmail"
+                    [(ngModel)]="newClientModel.email" />
 
-  	<div *ngIf="firstEmail.errors && (firstEmail.invalid && firstEmail.touched)">
-    	<small class="text-danger" *ngIf="firstEmail.errors.required">Entrer une adresse email</small>
-    	<small class="text-danger" *ngIf="firstEmail.errors.pattern">Entrer une adresse email valide</small>
-  	</div>
+                <div *ngIf="firstEmail.errors && (firstEmail.invalid && firstEmail.touched)">
+                    <small class="text-danger" *ngIf="firstEmail.errors.required">Entrer une adresse email</small>
+                    <small class="text-danger" *ngIf="firstEmail.errors.pattern">Entrer une adresse email valide</small>
+                </div>
 
-	</div>
+            </div>
 
-  <div class="form-group">
-  	<i class="fa fa-unlock-alt" aria-hidden="true"></i>
-  	<input type="password"  placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched"
-    	required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail"
-    	[(ngModel)]="newClientModel.password" />
+            <div class="form-group">
+                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.password" />
 
-  	<div *ngIf="password.errors && (password.invalid && password.touched)">
-    	<small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
-    	<small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
-  	</div>
-  </div>
-  <!--On écoute ici et on appelle la méthode onSubmit-->
-  <input [disabled]="usersEmail.invalid" (click)="onSubmit()"  class="btn" type="button" name="" value="S'inscrire">
-  </form>
-</div>
+                <div *ngIf="password.errors && (password.invalid && password.touched)">
+                    <small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
+                    <small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
+                </div>
+            </div>
+            <!--On écoute ici et on appelle la méthode onSubmit-->
+            <input [disabled]="usersEmail.invalid" (click)="onSubmit()" class="btn" type="button" name="" value="S'inscrire">
+        </form>
+    </div>
 
 
 </body>
 
 </html>
-

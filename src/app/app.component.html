@@ -13,10 +13,25 @@
         <div class="titre">MANIA&CO</div>
     </div>
 
-    <div class="login">
-        <button id="inscription" type="button" routerLink="/registration">S'inscrire</button>
-        <button id="connexion" type="button" routerLink="/login">Connexion</button>
+    <div *ngIf="Bool==false; else Connecte">
+        <div class="login">
+            <button id="inscription" type="button" routerLink="/registration">S'inscrire</button>
+            <button id="connexion" type="button" routerLink="/login">Connexion</button>
+        </div>
     </div>
+    <ng-template #Connecte>
+        <div class="login">
+            <button id="connexion" type="button" routerLink="/registration">Panier</button>
+            <button id="inscription" type="button" mat-button [matMenuTriggerFor]="profil">Profil</button>
+            <mat-menu #profil="matMenu">
+                <button class="choix1" mat-menu-item routerLink="/profil">Mon profil</button>
+                <button class="choix1" mat-menu-item routerLink="/commande">Mes commandes</button>
+                <button class="choix1" mat-menu-item routerLink="/">Se déconnecter</button>
+            </mat-menu>
+        </div>
+
+    </ng-template>
+
 
     <button id="accueil" type="button" routerLink="/">Accueil</button>
 

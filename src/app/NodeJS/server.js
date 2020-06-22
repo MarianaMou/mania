@@ -24,8 +24,7 @@ app.post('/api/register', registerController.register)
 app.get('/api/register', registerController.register)
 app.get('/api/catalogue', catalogueController.catalogue)
 app.get('/api/commentaire', commentaireController.commentaire)
-
-app.post('/api/soumettre_avis',avisController.avis)
+app.post('/api/soumettre_avis', avisController.avis)
 
 
 
