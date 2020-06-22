@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'login', component: loginComponent},
   {path:'registration', component: registrationComponent},
   {path:'catalogue', component: catalogueComponent},
+  {path:'catalogue/:id', component: catalogueComponent},
   {path:'article/:id', component: articleComponent},
   {path:'profil', component : profilComponent},
   {path:'commande', component : commandeComponent}

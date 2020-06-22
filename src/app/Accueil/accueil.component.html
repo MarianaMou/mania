@@ -12,48 +12,48 @@
     <div id="barremenu">
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu1">Pull</button>
         <mat-menu #menu1="matMenu">
-            <button  (click)="onSubmit1()"class="choix1" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmit2()" class="choix1" mat-menu-item>Sweatshirt</button>
-            <button (click)="onSubmit3()"class="choix1" mat-menu-item>Polaire</button>
+            <button [routerLink]="['/catalogue', 'Pull']" class="choix1" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'Sweatshirt']" class="choix1" mat-menu-item>Sweatshirt</button>
+            <button [routerLink]="['/catalogue', 'Polaire']" class="choix1" mat-menu-item>Polaire</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu2">Jupe</button>
         <mat-menu #menu2="matMenu">
-            <button (click)="onSubmitt1()" class="choix2" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmitt2()"class="choix2" mat-menu-item>Jupe plissée</button>
-            <button (click)="onSubmitt3()"class="choix2" mat-menu-item>Jupe crayon</button>
+            <button [routerLink]="['/catalogue', 'Jupe']" class="choix2" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'JupePlissee']" class="choix2" mat-menu-item>Jupe plissée</button>
+            <button [routerLink]="['/catalogue', 'JupeCrayon']" class="choix2" mat-menu-item>Jupe crayon</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu3">Top</button>
         <mat-menu #menu3="matMenu">
-            <button (click)="onSubmittt1()"class="choix3" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmittt2()"class="choix3" mat-menu-item>Débardeur</button>
-            <button (click)="onSubmittt3()"class="choix3" mat-menu-item>Blouse</button>
+            <button [routerLink]="['/catalogue', 'Top']" class="choix3" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'Debardeur']" class="choix3" mat-menu-item>Débardeur</button>
+            <button [routerLink]="['/catalogue', 'Blouse']" class="choix3" mat-menu-item>Blouse</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu4">Robe</button>
         <mat-menu #menu4="matMenu">
-            <button (click)="onSubmitttt1()" class="choix4" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmitttt2()"class="choix4" mat-menu-item>Robe de soirée</button>
-            <button (click)="onSubmitttt3()"class="choix4" mat-menu-item>Robe d'été</button>
+            <button [routerLink]="['/catalogue', 'Robe']" class="choix4" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'RobeSoiree']" class="choix4" mat-menu-item>Robe de soirée</button>
+            <button [routerLink]="['/catalogue', 'RobeEte']" class="choix4" mat-menu-item>Robe d'été</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu5">Veste</button>
         <mat-menu #menu5="matMenu">
-            <button (click)="onSubmittttt1()"class="choix5" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmittttt2()"class="choix5" mat-menu-item>Veste d'hiver</button>
-            <button (click)="onSubmittttt3()"class="choix5" mat-menu-item>Veste légère</button>
+            <button [routerLink]="['/catalogue', 'Veste']" class="choix5" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'VesteHiver']" class="choix5" mat-menu-item>Veste d'hiver</button>
+            <button [routerLink]="['/catalogue', 'VesteLegere']" class="choix5" mat-menu-item>Veste légère</button>
         </mat-menu>
         <button class="menubtn" mat-button [matMenuTriggerFor]="menu6">Pantalon</button>
         <mat-menu #menu6="matMenu">
-            <button (click)="onSubmitttttt1()"class="choix6" mat-menu-item>Voir tout</button>
-            <button (click)="onSubmitttttt2()"class="choix6" mat-menu-item>Pantalon classique</button>
-            <button (click)="onSubmitttttt3()"class="choix6" mat-menu-item>Short</button>
+            <button [routerLink]="['/catalogue', 'Pantalon']" class="choix6" mat-menu-item>Voir tout</button>
+            <button [routerLink]="['/catalogue', 'PantalonClassique']" class="choix6" mat-menu-item>Pantalon classique</button>
+            <button [routerLink]="['/catalogue', 'Short']" class="choix6" mat-menu-item>Short</button>
         </mat-menu>
     </div>
 
 
-     <div *ngFor="let article of articles; let j = index">
-      <h2>{{article.categorie}} </h2>
-      <h2>{{article.prix}} </h2>
-      <h2>{{article.nom_article}} </h2>
-      <img class="clickable" [routerLink]="['/article', article.num_reference]" mat-card-image src={{article.Image}} alt="image">
+    <div *ngFor="let article of articles; let j = index">
+        <h2>{{article.categorie}} </h2>
+        <h2>{{article.prix}} </h2>
+        <h2>{{article.nom_article}} </h2>
+        <img class="clickable" [routerLink]="['/article', article.num_reference]" mat-card-image src={{article.Image}} alt="image">
     </div>
 
     <carousel>

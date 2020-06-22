@@ -116,6 +116,11 @@
                     <small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
                 </div>
             </div>
+            <div class="form-group">
+                <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+                <input type="banque" placeholder="Coordonées bancaires" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.password" />
+
+            </div>
             <!--On écoute ici et on appelle la méthode onSubmit-->
             <input [disabled]="usersEmail.invalid" (click)="onSubmit()" class="btn" type="button" name="" value="S'inscrire">
         </form>
