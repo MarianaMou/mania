@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
 
 </head>
 
@@ -21,17 +24,17 @@
     </div>
     <ng-template #Connecte>
         <div class="login">
-            <button id="connexion" type="button" routerLink="/registration">Panier</button>
-            <button id="inscription" type="button" mat-button [matMenuTriggerFor]="profil">Profil</button>
+            <button id="connexion" type="button" routerLink="/panier">Panier <mat-icon>shopping_cart</mat-icon></button>
+            <button id="inscription" type="button" mat-button [matMenuTriggerFor]="profil">Profil <mat-icon>account_circle</mat-icon></button>
             <mat-menu #profil="matMenu">
                 <button class="choix1" mat-menu-item routerLink="/profil">Mon profil</button>
                 <button class="choix1" mat-menu-item routerLink="/commande">Mes commandes</button>
                 <button class="choix1" mat-menu-item routerLink="/">Se déconnecter</button>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </mat-menu>
         </div>
 
     </ng-template>
-
 
     <button id="accueil" type="button" routerLink="/">Accueil</button>
 

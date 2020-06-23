@@ -31,6 +31,7 @@ import{etoileComponent} from "./Etoile/etoile.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {commandeComponent} from './Commande/commande.component';
+import {panierComponent} from './Panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {commandeComponent} from './Commande/commande.component';
     etoileComponent,
     profilComponent,
     commandeComponent,
+    panierComponent,
 
   ],
   imports: [
