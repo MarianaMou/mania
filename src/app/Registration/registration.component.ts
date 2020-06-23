@@ -13,7 +13,7 @@ import {ConnexionSService} from './../Services/connexion-s.service'
 })
 export class registrationComponent {
 
-  newClientModel = new NewClient("","","",null,null,"","","","");
+  newClientModel = new NewClient("","","",null,null,"","","","","");
 
   constructor(private _connexionService:ConnexionSService){
 

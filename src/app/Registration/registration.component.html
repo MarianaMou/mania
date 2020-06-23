@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                <input type="text" placeholder="Nom" #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched" required class="form-control" name="nom" [(ngModel)]="newClientModel.nom" />
+                <input type="text" placeholder="Nom" #nom="ngModel" [class.is-invalid]="nom.invalid && nom.touched" required class="form-control" name="nom" [(ngModel)]="newClientModel.nom " />
 
                 <div *ngIf="nom.errors && (nom.invalid && nom.touched)">
                     <small class="text-danger" *ngIf="nom.errors.required">Entrer votre nom</small>
@@ -75,18 +75,17 @@
 
             <div class="form-group">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                <input type="text" placeholder="Ville" #ville="ngModel" [class.is-invalid]="ville.invalid && ville.touched" required class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.ville" />
+                <input type="text" placeholder="Ville" #ville="ngModel" [class.is-invalid]="ville.invalid && ville.touched" required class="form-control" name="ville" [(ngModel)]="newClientModel.ville" />
 
                 <div *ngIf="ville.errors && (ville.invalid && ville.touched)">
                     <small class="text-danger" *ngIf="ville.errors.required">Entrer une ville</small>
-
                 </div>
             </div>
 
 
             <div class="form-group">
                 <i class="fa fa-mobile" aria-hidden="true"></i>
-                <input type="number" placeholder="Téléphone" #tel="ngModel" [class.is-invalid]="tel.invalid && tel.touched" required pattern="^[0-9]{1,45}$" class="form-control" name="tel" [(ngModel)]="newClientModel.tel" />
+                <input type="number" placeholder="Téléphone" #tel="ngModel" [class.is-invalid]="tel.invalid && tel.touched" required pattern="^(\+?)(\d{2})(\s?)((\(0\))?)(\s?)(\d{2})(\s?)(\d{3})(\s?)(\d{2})(\s?)(\d{2})" class="form-control" name="tel" [(ngModel)]="newClientModel.tel" />
 
                 <div *ngIf="tel.errors && (tel.invalid && tel.touched)">
                     <small class="text-danger" *ngIf="tel.errors.required">Entrer votre numéro de téléphone</small>
@@ -109,16 +108,23 @@
 
             <div class="form-group">
                 <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                <input type="password" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.password" />
+                <input type="password" placeholder="Password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="motdepasse" [(ngModel)]="newClientModel.password" />
 
                 <div *ngIf="password.errors && (password.invalid && password.touched)">
                     <small class="text-danger" *ngIf="password.errors.required">Entrer un mot de passe</small>
                     <small class="text-danger" *ngIf="password.errors.pattern">Entrer un mot de passe valide</small>
                 </div>
             </div>
+
             <div class="form-group">
                 <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-                <input type="banque" placeholder="Coordonées bancaires" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" required pattern="[0-9a-zA-Z]{4,}" class="form-control" name="secondaryEmail" [(ngModel)]="newClientModel.password" />
+                <input type="banque" placeholder="Coordonées bancaires" #bancaire="ngModel" [class.is-invalid]="bancaire.invalid && bancaire.touched" required pattern="[0-9a-zA-Z]{13,}" class="form-control" name="bancaire" [(ngModel)]="newClientModel.bancaire" />
+                <div *ngIf="bancaire.errors && (bancaire.invalid && bancaire.touched)">
+                  <small class="text-danger" *ngIf="bancaire.errors.required">Entrer vos coordonnées bancaires</small>
+                  <small class="text-danger" *ngIf="bancaire.errors.pattern">Entrer des données valides</small>
+              </div>
+
+
 
             </div>
             <!--On écoute ici et on appelle la méthode onSubmit-->

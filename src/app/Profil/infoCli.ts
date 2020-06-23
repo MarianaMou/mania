@@ -1,4 +1,4 @@
-export class NewClient {
+export class Info {
   constructor(
     public prenom : String,
     public nom : String,
@@ -8,7 +8,6 @@ export class NewClient {
     public ville : String,
     public tel : String,
     public email : String,
-    public password : String,
     public bancaire : String,
 
   ) {}

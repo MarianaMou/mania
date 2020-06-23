@@ -31,7 +31,11 @@ import{etoileComponent} from "./Etoile/etoile.component";
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {commandeComponent} from './Commande/commande.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
+import { CommandesComponent } from './commandes/commandes.component';
 import {panierComponent} from './Panier/panier.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +49,10 @@ import {panierComponent} from './Panier/panier.component';
     etoileComponent,
     profilComponent,
     commandeComponent,
+    MyDialogComponent,
+    CommandesComponent,
     panierComponent,
+
 
   ],
   imports: [
@@ -67,6 +74,8 @@ import {panierComponent} from './Panier/panier.component';
     FlexLayoutModule,
     MatIconModule,
     MatGridListModule,
+    MatDialogModule
+
 
   ],
   providers: [CookieService],

@@ -11,6 +11,7 @@ var prenom=req.body.prenom;
 var num_tel=req.body.tel;
 var email=req.body.email;
 var mot_de_passe  = req.body.password;
+var bancaire = req.body.bancaire
 
 //Adresse
 var rue = req.body.rue;
@@ -37,8 +38,8 @@ console.log(req.body);
 
                 });
 
-  var sql = "INSERT INTO Client(id_client,id_adresse,nom,prenom,num_tel,email,mot_de_passe) VALUES (?)";
-  var values = [id_client,id,nom,prenom,num_tel,email,mot_de_passe];
+  var sql = "INSERT INTO Client(id_client,id_adresse,nom,prenom,num_tel,email,mot_de_passe,Coordonne_bancaire) VALUES (?)";
+  var values = [id_client,id,nom,prenom,num_tel,email,mot_de_passe,bancaire];
   mysqlConnection.query(sql,[values],function (error, results) {
             if (error) {
           res.send({

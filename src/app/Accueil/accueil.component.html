@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="styledheet" type="text/css" href="menu.component.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
 </head>
 
 <body>
@@ -49,12 +50,7 @@
     </div>
 
 
-    <div *ngFor="let article of articles; let j = index">
-        <h2>{{article.categorie}} </h2>
-        <h2>{{article.prix}} </h2>
-        <h2>{{article.nom_article}} </h2>
-        <img class="clickable" [routerLink]="['/article', article.num_reference]" mat-card-image src={{article.Image}} alt="image">
-    </div>
+
 
     <carousel>
         <slide>

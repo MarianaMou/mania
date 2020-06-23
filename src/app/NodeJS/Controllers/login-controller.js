@@ -21,7 +21,7 @@ module.exports.login=function(req,res){
                     message:'true',
 
                 })
-                exports.email = email;
+
             }else{
                 res.send({
                   status:false,
