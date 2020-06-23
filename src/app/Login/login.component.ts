@@ -43,11 +43,11 @@ export class loginComponent {
       //Client.client = this.clientModel;
 
 
-      this.cookieService.set('Connecte','true');
+    this.cookieService.set('Connecte','true');
     this.router.navigate(['/catalogue']); // on ouvre une nouvelle page si c'est correcte
     //coookies, nous permet de stocker des informations pour pouvoir les utiliser plus tard
     this.cookieService.set('Email',<string>this.clientModel.email); //écrit la valeur dans le navigateur,c'est comme une base de donnée interne, prends 2 valeurs en parallèle
-    this.cookieService.set('Password',<string>this.clientModel.password);
+
 
    // this.cookieValue = this.cookieService.get('Email');// consulter dans le navigateur pour récuperer valeur, utiliser seulement quand on veut utiliser les valeurs dans les autres pages
    //this.cookieService.delete('Email');// effacer l'attribut email avec sa valeur; utiliser au moment du logout.

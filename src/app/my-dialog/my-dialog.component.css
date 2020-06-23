@@ -1,0 +1,39 @@
+
+.modal-content {
+width:500px;
+height:250px;
+background-color: white;
+border-radius:4px;
+text-align: center;
+padding: 20px;
+position:relative;
+}
+.bou1{
+font-size: 20px;
+cursor: pointer;
+background: none;
+border: 2px solid rgba(42, 50, 77, 0.233);
+color: black;
+display: inline;
+text-align: center;
+right:100px;
+margin:15px auto;
+
+}
+.bou2{
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid rgba(42, 50, 77, 0.233);
+  color: black;
+  display: inline;
+  text-align: center;
+  right:-100px;
+  margin:15px auto;
+
+  }
+.example-full-width {
+  width: 50%;
+  display:block;
+  margin:15px auto;
+}

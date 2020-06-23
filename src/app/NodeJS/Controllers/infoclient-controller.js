@@ -1,11 +1,11 @@
 var mysqlConnection = require('./../config');
-var login = require('./login-controller');
+
 
 
 module.exports.infoclient = function(req, res) {
-var email = login.email;
+var email = req.body.Email;
 
-  mysqlConnection.query('SELECT nom,prenom,num_tel,email,rue,num_rue,ville,code_postal FROM Client INNER JOIN Adresse WHERE email = ? AND Client.id_adresse=Adresse.id_adresse',[email],
+  mysqlConnection.query('SELECT nom,prenom,num_tel,email,rue,num_rue,ville,code_postal,Coordonne_bancaire FROM Client INNER JOIN Adresse WHERE email = ? AND Client.id_adresse=Adresse.id_adresse',[email],
       (err, rows, results) => {
           if (!err) res.send(rows);
           else

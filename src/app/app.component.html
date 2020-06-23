@@ -26,7 +26,7 @@
             <mat-menu #profil="matMenu">
                 <button class="choix1" mat-menu-item routerLink="/profil">Mon profil</button>
                 <button class="choix1" mat-menu-item routerLink="/commande">Mes commandes</button>
-                <button class="choix1" mat-menu-item routerLink="/">Se déconnecter</button>
+                <button (click)="Deconnexion()" class="choix1" mat-menu-item routerLink="/">Se déconnecter</button>
             </mat-menu>
         </div>
 

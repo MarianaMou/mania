@@ -47,7 +47,7 @@ app.get('/api/catalogue', catalogueController.catalogue)
 app.post('/api/commentaire', commentaireController.commentaire)
 
 app.post('/api/soumettre_avis', avisController.avis)
-app.get('/api/client', infoclientController.infoclient)
+app.post('/api/client', infoclientController.infoclient)
 app.get('/api/commande', infocommandeController.infocommande)
 
 //Categorie

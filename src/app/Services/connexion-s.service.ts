@@ -8,7 +8,9 @@ import {Observable} from 'rxjs';
 import{SoumettreAvis} from './../soumettre-avis';
 import{articlegroupe} from '../Accueil/articlegroupe';
 import { CommentNumRef } from '../Article/CommentNumRef';
-
+import {Info} from '../Profil/infoCli'
+import{EmailCli} from './../Profil/EmailCli'
+import{Commandes} from './../commandes/Commandes'
 
 const Options ={
 headers : new HttpHeaders({'Content-Type': 'application/json'})
@@ -106,8 +108,16 @@ export class ConnexionSService {
       return this.http.post<any>(this._url+'commentaire',comment);
       }
 
+    getListeCommandes(cli:EmailCli){
+      return this.http.post<any>(this._url+'commande',cli);
+    }
+
 SoumettreAvis(avis:SoumettreAvis) {
   return this.http.post<any>(this._url+'soumettre_avis',avis);
 }
+
+  getInfoClient(Email:EmailCli){
+    return this.http.post<any>(this._url+'client',Email);
+  }
 
 }
