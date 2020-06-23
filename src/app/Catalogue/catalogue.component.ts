@@ -18,6 +18,7 @@ export class catalogueComponent implements OnInit{
   public sub: any;
 public articles = [];
 public AS : any;
+public cookiepanier: string;
 
 
 constructor(private _articleservice : ConnexionSService,private cookieService: CookieService, private route: ActivatedRoute) {
@@ -26,12 +27,14 @@ constructor(private _articleservice : ConnexionSService,private cookieService: C
 
 
 
-selectedA() {
-  console.log("Hello")
-}
+
+
 ngOnInit () {
   this._articleservice.getArticle()
   .subscribe(data => this.articles = data);
+
+   this.cookiepanier= this.cookieService.get('PanierListe')
+   this.cookieService.set('PanierListe', this.cookiepanier);
 
   this.sub = this.route.params.subscribe(params => {
     this.id = params['id']; // (+) converts string 'id' to a number

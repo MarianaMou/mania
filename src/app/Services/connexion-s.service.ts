@@ -10,7 +10,7 @@ import{articlegroupe} from '../Accueil/articlegroupe';
 import { CommentNumRef } from '../Article/CommentNumRef';
 import {Info} from '../Profil/infoCli'
 import{EmailCli} from './../Profil/EmailCli'
-import{Commandes} from './../commandes/Commandes'
+import{Commandes} from '../Commande/Commandes'
 
 const Options ={
 headers : new HttpHeaders({'Content-Type': 'application/json'})

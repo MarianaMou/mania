@@ -5,7 +5,7 @@
 
     <div *ngIf="article.num_reference==id">
         <ul style="list-style-type: none;">
-          <img src={{article.Image}} alt="image">
+            <img src={{article.Image}} alt="image">
             <li>
                 <h1>{{article.nom_article}}</h1>
             </li>
@@ -15,7 +15,7 @@
             <li>Couleur: {{article.couleur}}</li>
             <li>Prix: {{article.prix}}</li>
 
-            <button mat-raised-button color="primary">Commander</button>
+            <button (click)="ajoutPanier(article.num_reference)" mat-raised-button color="primary">Ajouter au panier <mat-icon>add_shopping_cart</mat-icon></button>
         </ul>
     </div>
 

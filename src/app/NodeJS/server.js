@@ -48,7 +48,7 @@ app.post('/api/commentaire', commentaireController.commentaire)
 
 app.post('/api/soumettre_avis', avisController.avis)
 app.post('/api/client', infoclientController.infoclient)
-app.get('/api/commande', infocommandeController.infocommande)
+app.post('/api/commande', infocommandeController.infocommande)
 
 //Categorie
 app.get('/api/pull', pullController.pulls)

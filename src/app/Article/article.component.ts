@@ -1,9 +1,11 @@
 import { Component,OnInit, OnDestroy } from '@angular/core';
 import {ConnexionSService} from './../Services/connexion-s.service';
 import { ActivatedRoute } from '@angular/router';
-import{SoumettreAvis} from './../soumettre-avis'
-import{Commentaires} from './commentaire'
-import{CommentNumRef} from './CommentNumRef'
+import{SoumettreAvis} from './../soumettre-avis';
+import{Commentaires} from './commentaire';
+import{CommentNumRef} from './CommentNumRef';
+import { CookieService } from 'ngx-cookie-service'; // cookies
+
 
 
 @Component({
@@ -15,6 +17,9 @@ import{CommentNumRef} from './CommentNumRef'
 })
 export class articleComponent implements OnInit,OnDestroy{
   id: String;
+  public value ='false';
+  public listePanier = [];
+  public saveValue :string;
   private sub: any;
   public articles=[]
   public commentaires = [];
@@ -24,13 +29,23 @@ export class articleComponent implements OnInit,OnDestroy{
   hoverState = 0;
 
 
-  constructor(private _articleservice : ConnexionSService,private route: ActivatedRoute) {}
+  constructor(private _articleservice : ConnexionSService,private route: ActivatedRoute, private cookieService: CookieService) {
+
+  }
 
 
 
   newSoumettre_avisModel = new SoumettreAvis (null,"","",null);
   listCommentaire = new CommentNumRef("");
 
+
+ajoutPanier(panier: string){
+this.listePanier.push(panier);
+console.log(this.listePanier);
+this.cookieService.set('PanierListe', (this.listePanier).toString());
+console.log((this.listePanier).toString());
+
+}
 
   onSubmit_avis() {
    // this.newSoumettre_avisModel.num_client=...
@@ -52,7 +67,7 @@ this.newSoumettre_avisModel.nb_etoile = this.rating //on met le nombre d'étoile
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; // (+) converts string 'id' to a number
       this.listCommentaire.num_reference= this.id //on fixe le numéro de refrence du commentaire de l'article à afficher
-
+      this.listePanier = this.cookieService.get('PanierListe').split(',');
 
 
    });
@@ -68,9 +83,14 @@ this.newSoumettre_avisModel.nb_etoile = this.rating //on met le nombre d'étoile
 
 
   }
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
+
+    ngOnDestroy() {
+
+      this.sub.unsubscribe();
+    }
+
+
+
   enter(i) {
     this.hoverState = i;
   }

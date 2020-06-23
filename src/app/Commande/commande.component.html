@@ -8,14 +8,41 @@
 </head>
 
 <body>
-    <mat-card class="example-card">
-        <mat-card-header>
+    <h1>Mes commandes</h1>
+    <div *ngFor="let commande of listeCommandes; let j = index">
 
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>MR. X</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-    </mat-card>
+        <div class="card">
+            <mat-card class="example-card">
+                <span *ngIf="j==0 || commande.date!=listeCommandes[j-1].date">Commandé le : {{commande.date}}	&nbsp;	&nbsp;	&nbsp;</span>
+                <span>{{somme(commande.prix)}}</span>
+                <span *ngIf="j==listeCommandes.length-1 || commande.date!=listeCommandes[j+1].date">
+                    Total : {{total}} CHF
+                    <span>{{zero()}}</span>
+                </span>
+                <h3></h3>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{commande.nom_article}}
+                    </mat-card-title>
+                </mat-card-header>
+                <img class="clickable" [routerLink]="['/article', commande.num_reference]" mat-card-image src={{commande.Image}} alt="image">
+                <mat-card-content>
+                    <div>
+                        <ul style="list-style-type:none">
+                            <li>Référence : {{commande.num_reference}}</li>
+                            <li>Quantité : {{commande.quantite_article}}</li>
+                            <li>Prix : {{commande.prix}} CHF</li>
+
+                        </ul>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+
+
+    </div>
+
 
 </body>
 

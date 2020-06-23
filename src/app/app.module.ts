@@ -33,7 +33,6 @@ import { CookieService } from 'ngx-cookie-service';
 import {commandeComponent} from './Commande/commande.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MyDialogComponent } from './my-dialog/my-dialog.component';
-import { CommandesComponent } from './commandes/commandes.component';
 import {panierComponent} from './Panier/panier.component';
 
 
@@ -50,7 +49,6 @@ import {panierComponent} from './Panier/panier.component';
     profilComponent,
     commandeComponent,
     MyDialogComponent,
-    CommandesComponent,
     panierComponent,
 
 
