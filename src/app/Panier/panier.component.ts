@@ -16,16 +16,23 @@ export class panierComponent implements OnInit {
   public total = 0;
 
 
+
   constructor(private _articleservice : ConnexionSService, private cookieService: CookieService) {
 
   }
 
-  zero(){
-    this.total = 0;}
+
 
   somme(prix: number){
     this.total=this.total + prix;
+
   }
+  zero(){
+    this.total = 0;
+    this.cookieService.set('PanierListe', null);
+  }
+
+
 
 
   ngOnInit() {

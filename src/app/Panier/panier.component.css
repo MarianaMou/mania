@@ -32,3 +32,13 @@ img.resize {
     width: 250px;
     margin-right: 50px;
 }
+
+h1 {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.right {
+    text-align: right;
+}

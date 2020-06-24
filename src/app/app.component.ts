@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
 
   }
   Deconnexion() {
-    this.cookieService.delete('Connecte')
-    this.Bool = (this.cookieValue === 'false')
+    this.cookieService.set('Connecte', null)
+
   }
 
 

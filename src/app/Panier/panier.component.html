@@ -8,11 +8,16 @@
 </head>
 
 <body>
+    <h1>Mon panier
+        <mat-icon>shopping_basket</mat-icon>
+    </h1>
+
     <div *ngFor="let articlej of listePanier; let j = index">
         <div *ngFor="let article of articles; let i = index">
             <div *ngIf="article.num_reference==articlej">
                 <div class="card">
                     <mat-card class="example-card">
+
 
                         <h3></h3>
                         <mat-card-header>
@@ -27,24 +32,19 @@
                                     <li>Référence : {{article.num_reference}}</li>
                                     <li>Quantité : {{article.quantite_article}}</li>
                                     <li>Prix : {{article.prix}} CHF</li>
-
-
                                 </ul>
-                                <span>{{somme(article.prix)}}</span>
-                                <span *ngIf="j==listePanier.length-1 ">
-                      <mat-card class ="cardbtn">
-
-                          <span>Total : {{total}} CHF&nbsp;&nbsp;&nbsp;</span>
-
-                                <span><button (click)="zero()" routerLink ='/' mat-raised-button color="primary">Payer <mat-icon>credit_card</mat-icon></button></span>
-
-
+                                <mat-card class="cardbtn">
+                                </mat-card>
+                            </div>
+                        </mat-card-content>
                     </mat-card>
+                    <span>{{somme(article.prix)}}</span>
+                    <span *ngIf="j==listePanier.length-1 ">
+
+                    <h1 class="right">Total : {{total}} CHF <span>
+                      <button (click)="zero()" routerLink ='/' mat-raised-button color="primary">Payer <mat-icon>credit_card</mat-icon></button></span></h1>
 
                     </span>
-                    </div>
-                    </mat-card-content>
-                    </mat-card>
                 </div>
             </div>
         </div>
