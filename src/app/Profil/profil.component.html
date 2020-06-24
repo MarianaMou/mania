@@ -13,119 +13,118 @@
 
 
 
-    <form class="example-form"  #usersEmail="ngForm" novalidate>
+    <form class="example-form" #usersEmail="ngForm" novalidate>
         <h1>Mon profil</h1>
         <div *ngFor="let info of infoClient">
-        <div class="form-group">
-            <mat-form-field class="example-full" style="padding-right: 40px;">
-                <mat-label>Prénom</mat-label>
-                <input type="text" matInput #prenom="ngModel" required class="form-control" name="prenom" [(ngModel)]="info.prenom" >
-                 <div *ngIf="(prenom.dirty && prenom.touched)">
-                  {{modificationPrenom(info.prenom)}}
-                  </div>
-                  {{modificationPrenom(info.prenom)}}
-            </mat-form-field>
-            <mat-form-field class="example-full">
-                <mat-label>Nom</mat-label>
+            <div class="form-group">
+                <mat-form-field class="example-full" style="padding-right: 40px;">
+                    <mat-label>Prénom</mat-label>
+                    <input type="text" matInput #prenom="ngModel" required class="form-control" name="prenom" [(ngModel)]="info.prenom">
+                    <div *ngIf="(prenom.dirty && prenom.touched)">
+                        {{modificationPrenom(info.prenom)}}
+                    </div>
+                    {{modificationPrenom(info.prenom)}}
+                </mat-form-field>
+                <mat-form-field class="example-full">
+                    <mat-label>Nom</mat-label>
 
-                  <input  type="text" matInput  #nom="ngModel" required class="form-control" name="nom" [(ngModel)]="info.nom">
+                    <input type="text" matInput #nom="ngModel" required class="form-control" name="nom" [(ngModel)]="info.nom">
 
-                <div *ngIf="(nom.dirty && nom.touched)">
-                {{modificationNom(info.nom)}}
-                </div>
-                {{modificationNom(info.nom)}}
-            </mat-form-field>
+                    <div *ngIf="(nom.dirty && nom.touched)">
+                        {{modificationNom(info.nom)}}
+                    </div>
+                    {{modificationNom(info.nom)}}
+                </mat-form-field>
+
+            </div>
+            <div class="form-group1">
+
+                <mat-form-field class="example-full" style="padding-right: 40px;">
+                    <mat-label>Rue</mat-label>
+                    <input type="text" matInput #rue="ngModel" required class="form-control" name="rue" [(ngModel)]="info.rue">
+                    <div *ngIf="(rue.dirty && rue.touched)">
+                        {{modificationRue(info.rue)}}
+                    </div>
+                    {{modificationRue(info.rue)}}
+                </mat-form-field>
+
+
+
+
+                <mat-form-field class="example-full">
+                    <mat-label>N° Rue</mat-label>
+                    <input type="number" matInput #num_rue="ngModel" required class="form-control" name="numrue" [(ngModel)]="info.num_rue">
+                    <div *ngIf="(num_rue.dirty && num_rue.touched)">
+                        {{modificationNumRue(info.num_rue)}}
+                    </div>
+                    {{modificationNumRue(info.num_rue)}}
+                </mat-form-field>
+            </div>
+            <div class="form-group1">
+
+                <mat-form-field class="example-full" style="padding-right: 40px;">
+                    <mat-label>Code postal</mat-label>
+                    <input type="number" matInput #code_postal="ngModel" required class="form-control" name="code_postal" [(ngModel)]="info.code_postal">
+                    <div *ngIf="(code_postal.dirty && code_postal.touched)">
+                        {{modificationCP(info.code_postal)}}
+                    </div>
+                    {{modificationCP(info.code_postal)}}
+                </mat-form-field>
+
+
+                <mat-form-field class="example-full">
+                    <mat-label>Ville</mat-label>
+                    <input type="text" matInput #ville="ngModel" required class="form-control" name="ville" [(ngModel)]="info.ville">
+                    <div *ngIf="(code_postal.dirty && code_postal.touched)">
+                        {{modificationVille(info.ville)}}
+                    </div>
+                    {{modificationVille(info.ville)}}
+                </mat-form-field>
+            </div>
+            <div class="form-group1">
+
+                <mat-form-field class="example-full" style="padding-right: 40px;">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput #email="ngModel" required class="form-control" name="email" [(ngModel)]="info.email">
+                    <div *ngIf="(email.dirty && email.touched)">
+                        {{modificationEmail(info.email)}}
+                    </div>
+                    {{modificationEmail(info.email)}}
+                </mat-form-field>
+
+                <mat-form-field class="example-full">
+                    <mat-label>Téléphone</mat-label>
+                    <input type="text" matInput #num_tel="ngModel" required class="form-control" name="num_tel" [(ngModel)]="info.num_tel">
+                    <div *ngIf="(num_tel.dirty && num_tel.touched)">
+                        {{modificationTel(info.num_tel)}}
+                    </div>
+                    {{modificationTel(info.num_tel)}}
+                </mat-form-field>
+            </div>
+            <div class="form-group2">
+
+                <mat-form-field class="example-full" style="padding-right: 40px;">
+                    <mat-label classe="titre">Coordonnées bancaires</mat-label>
+                    <input type="text" matInput #bancaire="ngModel" required class="form-control" name="bancaire" [(ngModel)]="info.Coordonne_bancaire">
+                    <div *ngIf="(bancaire.dirty && bancaire.touched)">
+                        {{modificationBancaire(info.bancaire)}}
+                    </div>
+                    {{modificationBancaire(info.bancaire)}}
+                </mat-form-field>
+            </div>
+
+
+            <button class="btn" (click)="onSubmit()" routerLink="/" mat-raised-button>Enregistrer</button>
+            <button id="popup" mat-raised-button (click)="openDialog()">Changer le mot de passe</button>
+
+
 
         </div>
-        <div class="form-group1">
-
-            <mat-form-field class="example-full" style="padding-right: 40px;">
-                <mat-label>Rue</mat-label>
-                <input type="text" matInput #rue="ngModel" required class="form-control" name="rue" [(ngModel)]="info.rue">
-                <div *ngIf="(rue.dirty && rue.touched)">
-                  {{modificationRue(info.rue)}}
-                  </div>
-                  {{modificationRue(info.rue)}}
-            </mat-form-field>
+    </form>
 
 
-
-
-            <mat-form-field class="example-full">
-                <mat-label>N° Rue</mat-label>
-                <input type="number" matInput  #num_rue="ngModel" required class="form-control" name="numrue" [(ngModel)]="info.num_rue">
-                <div *ngIf="(num_rue.dirty && num_rue.touched)">
-                  {{modificationNumRue(info.num_rue)}}
-                  </div>
-                  {{modificationNumRue(info.num_rue)}}
-            </mat-form-field>
-        </div>
-        <div class="form-group1">
-
-            <mat-form-field class="example-full" style="padding-right: 40px;">
-                <mat-label>Code postal</mat-label>
-                <input type="number" matInput #code_postal="ngModel" required class="form-control" name="code_postal" [(ngModel)]="info.code_postal">
-                <div *ngIf="(code_postal.dirty && code_postal.touched)">
-                  {{modificationCP(info.code_postal)}}
-                  </div>
-                  {{modificationCP(info.code_postal)}}
-            </mat-form-field>
-
-
-            <mat-form-field class="example-full">
-                <mat-label>Ville</mat-label>
-                <input type="text" matInput   #ville="ngModel" required class="form-control" name="ville" [(ngModel)]="info.ville">
-                <div *ngIf="(code_postal.dirty && code_postal.touched)">
-                  {{modificationVille(info.ville)}}
-                  </div>
-                  {{modificationVille(info.ville)}}
-            </mat-form-field>
-        </div>
-        <div class="form-group1">
-
-            <mat-form-field class="example-full" style="padding-right: 40px;">
-                <mat-label>Email</mat-label>
-                <input type="text" matInput #email="ngModel" required class="form-control" name="email" [(ngModel)]="info.email">
-                <div *ngIf="(email.dirty && email.touched)">
-                  {{modificationEmail(info.email)}}
-                  </div>
-                  {{modificationEmail(info.email)}}
-            </mat-form-field>
-
-            <mat-form-field class="example-full">
-                <mat-label>Téléphone</mat-label>
-                <input type="text" matInput #num_tel="ngModel" required class="form-control" name="num_tel" [(ngModel)]="info.num_tel">
-                <div *ngIf="(num_tel.dirty && num_tel.touched)">
-                  {{modificationTel(info.num_tel)}}
-                  </div>
-                  {{modificationTel(info.num_tel)}}
-            </mat-form-field>
-        </div>
-        <div class="form-group2">
-
-            <mat-form-field class="example-full" style="padding-right: 40px;">
-                <mat-label classe="titre">Coordonnées bancaires</mat-label>
-                <input type="text" matInput #bancaire="ngModel" required class="form-control" name="bancaire" [(ngModel)]="info.Coordonne_bancaire">
-                <div *ngIf="(bancaire.dirty && bancaire.touched)">
-                  {{modificationBancaire(info.bancaire)}}
-                  </div>
-                  {{modificationBancaire(info.bancaire)}}
-            </mat-form-field>
-        </div>
-
-
-        <button class="btn" (click)="onSubmit()" mat-raised-button >Enregistrer</button>
-        <button id="popup" mat-raised-button (click)="openDialog()">Changer le mot de passe</button>
-
-
-
-</div>
-</form>
-
-
-<br>
+    <br>
 
 </body>
 
 </html>
-
