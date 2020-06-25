@@ -107,9 +107,9 @@
                     <mat-label classe="titre">Coordonnées bancaires</mat-label>
                     <input type="text" matInput #bancaire="ngModel" required class="form-control" name="bancaire" [(ngModel)]="info.Coordonne_bancaire">
                     <div *ngIf="(bancaire.dirty && bancaire.touched)">
-                        {{modificationBancaire(info.bancaire)}}
+                        {{modificationBancaire(info.Coordonne_bancaire)}}
                     </div>
-                    {{modificationBancaire(info.bancaire)}}
+                    {{modificationBancaire(info.Coordonne_bancaire)}}
                 </mat-form-field>
             </div>
 

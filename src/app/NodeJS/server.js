@@ -27,8 +27,14 @@ var hiverController = require('./Controllers/Catégorie/Sous-catégorie/Vestes/V
 var legereController = require('./Controllers/Catégorie/Sous-catégorie/Vestes/Vestelegere-controller')
 var classiqueController = require('./Controllers/Catégorie/Sous-catégorie/Pantalons/Pantalonclassique-controller')
 var shortController = require('./Controllers/Catégorie/Sous-catégorie/Pantalons/Short-controller')
-
+var update = require('./Controllers/InfoUptade-controller')
+var contenu = require('./Controllers/verifier_panier-controller')
+var Liste = require('./Controllers/ListePanier-controller')
+var deletePanier= require('./Controllers/DeletePanier-controller')
+var payer= require('./Controllers/PasseCommande-controller')
 var mysqlConnection = require('./config');
+var commande = require('./Controllers/infocommande-controller')
+
 
 app.use(bodyparser.json());
 
@@ -39,17 +45,21 @@ app.use(cors(serverAngular));
 
 var urlencodedParser = app.use(bodyparser.urlencoded({ extended: true }));
 
-
+app.post('/api/commande',commande.infocommande)
 app.post('/api/login', loginController.login)
 app.post('/api/register', registerController.register)
 app.get('/api/register', registerController.register)
 app.get('/api/catalogue', catalogueController.catalogue)
 app.post('/api/commentaire', commentaireController.commentaire)
+app.post('/api/deleteNow',deletePanier.PanierDelete)
+app.post('/api/payer',payer.payer)
 
 app.post('/api/soumettre_avis', avisController.avis)
 app.post('/api/client', infoclientController.infoclient)
 app.post('/api/commande', infocommandeController.infocommande)
-
+app.post('/api/infoU',update.infoUptade)
+app.post('/api/panier',contenu.panier)
+app.post('/api/listeArticle',Liste.liste)
 //Categorie
 app.get('/api/pull', pullController.pulls)
 app.get('/api/jupe', jupeController.jupes)

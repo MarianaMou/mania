@@ -14,7 +14,7 @@
         <div class="card">
             <mat-card class="example-card">
                 <span *ngIf="j==0 || commande.date!=listeCommandes[j-1].date">Commandé le : {{commande.date}}	&nbsp;	&nbsp;	&nbsp;</span>
-                <span>{{somme(commande.prix)}}</span>
+                <span>{{somme(commande.prix*commande.quantite_article)}}</span>
                 <span *ngIf="j==listeCommandes.length-1 || commande.date!=listeCommandes[j+1].date">
                     Total : {{total}} CHF
                     <span>{{zero()}}</span>
@@ -30,8 +30,11 @@
                     <div>
                         <ul style="list-style-type:none">
                             <li>Référence : {{commande.num_reference}}</li>
+                            <li>Catégorie : {{commande.categorie}}</li>
+                            <li>Sous-catégorie : {{commande.sous_categorie}}</li>
+                            <li>Couleur : {{commande.couleur}}</li>
                             <li>Quantité : {{commande.quantite_article}}</li>
-                            <li>Prix : {{commande.prix}} CHF</li>
+                            <li>Prix : {{commande.prix*commande.quantite_article}} CHF</li>
 
                         </ul>
                     </div>

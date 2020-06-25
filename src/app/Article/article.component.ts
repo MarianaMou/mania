@@ -5,6 +5,7 @@ import{SoumettreAvis} from './../soumettre-avis';
 import{Commentaires} from './commentaire';
 import{CommentNumRef} from './CommentNumRef';
 import { CookieService } from 'ngx-cookie-service'; // cookies
+import {ContenuPanier} from './contenuPanier'
 
 
 
@@ -27,7 +28,8 @@ export class articleComponent implements OnInit,OnDestroy{
   stars = [1, 2, 3, 4, 5];
   public rating = 0;
   hoverState = 0;
-
+  emailValue : string;
+  emailValue2: string;
 
   constructor(private _articleservice : ConnexionSService,private route: ActivatedRoute, private cookieService: CookieService) {
 
@@ -37,18 +39,28 @@ export class articleComponent implements OnInit,OnDestroy{
 
   newSoumettre_avisModel = new SoumettreAvis (null,"","",null);
   listCommentaire = new CommentNumRef("");
+  Panier = new ContenuPanier("","");
 
 
 ajoutPanier(panier: string){
-this.listePanier.push(panier);
+
+this.emailValue2=this.cookieService.get('Email')
+this.Panier.email=this.emailValue2
+this.Panier.num_reference=panier;
+
+/*this.listePanier.push(panier);
 console.log(this.listePanier);
 this.cookieService.set('PanierListe', (this.listePanier).toString());
-console.log((this.listePanier).toString());
-
+console.log((this.listePanier).toString());*/
+this._articleservice.getPanier(this.Panier).subscribe( //on soumet l'avis
+      data=> window.alert(data.message),
+      error=> console.error('erreur',error)
+    )
 }
 
   onSubmit_avis() {
-   // this.newSoumettre_avisModel.num_client=...
+   this.emailValue = this.cookieService.get('Email');
+   this.newSoumettre_avisModel.email=this.emailValue;
    this.newSoumettre_avisModel.num_reference=this.id,
     console.log(this.newSoumettre_avisModel);
     this._articleservice.SoumettreAvis(this.newSoumettre_avisModel).subscribe( //on soumet l'avis

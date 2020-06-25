@@ -52,7 +52,10 @@ export class profilComponent implements OnInit {
     });
   }
   onSubmit() {
-    window.alert(this.newInfo.nom)
+    this._articleservice.UpdateInfo(this.newInfo).subscribe(
+      data=> window.alert(data.message),
+      error=> console.error('erreur',error)
+    )
   }
   modificationPrenom(prenom:String){
    this.newInfo.prenom=prenom
@@ -79,6 +82,7 @@ this.newInfo.email=email
 this.newInfo.tel=tel
   }
   modificationBancaire(bancaire:String){
+    console.log(bancaire)
 this.newInfo.bancaire=bancaire
   }
 

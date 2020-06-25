@@ -1,6 +1,6 @@
 export class SoumettreAvis {
   constructor(
-    public num_client : number,
+    public email :String,
     public num_reference : String,
     public commentaire : String,
     public nb_etoile : number,

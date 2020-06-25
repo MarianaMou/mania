@@ -11,6 +11,10 @@ import { CommentNumRef } from '../Article/CommentNumRef';
 import {Info} from '../Profil/infoCli'
 import{EmailCli} from './../Profil/EmailCli'
 import{Commandes} from '../Commande/Commandes'
+import{Infomodifie} from './../Profil/Infomodifie'
+import{ContenuPanier} from './../Article/contenuPanier'
+import{TableCommande} from './../Panier/EmailClient'
+
 
 const Options ={
 headers : new HttpHeaders({'Content-Type': 'application/json'})
@@ -35,9 +39,24 @@ export class ConnexionSService {
     InscriptionCli(newCli:NewClient) {
       return this.http.post<any>(this._url+'register',newCli);
     }
+    getListePanier(liste:TableCommande) {
+      return this.http.post<any>(this._url+'listeArticle',liste);
+    }
 
     getArticle (): Observable <Articles[]>{
       return this.http.get<Articles[]>(this._url+'catalogue');
+    }
+    UpdateInfo(Cli:Infomodifie) {
+      return this.http.post<any>(this._url+'infoU',Cli);
+    }
+    getPanier(Panier:ContenuPanier) {
+      return this.http.post<any>(this._url+'panier',Panier);
+    }
+    DeletePanier(email:TableCommande) {
+      return this.http.post<any>(this._url+'deleteNow',email);
+    }
+    PasseCommande(email:TableCommande){
+      return this.http.post<any>(this._url+'payer',email);
     }
    //Pull
     getAllpull (): Observable <articlegroupe[]>{

@@ -3,6 +3,7 @@ import {ConnexionSService} from './../Services/connexion-s.service';
 import { CookieService } from 'ngx-cookie-service';
 import {ChangeDetectorRef} from '@angular/core';
 import {Observable} from 'rxjs';
+import{TableCommande} from './EmailClient'
 
 @Component({
   selector: 'app-panier',
@@ -14,35 +15,81 @@ export class panierComponent implements OnInit {
   public articles =[];
   public listePanier = [];
   public total = 0;
-
-
-
+  emailValue : string;
+  email = new TableCommande("");
+  public prixx = [];
+  public totalprix=[]
+  public sum = 0;
+  public a = new Array(1);
+  public prixfinal = 0;
+  public prixArticle = 0;
   constructor(private _articleservice : ConnexionSService, private cookieService: CookieService) {
 
   }
 
 
 
-  somme(prix: number){
-    this.total=this.total + prix;
 
+  prixTotal(){
+
+    for (let article of this.articles) {
+
+      this.prixx.push(article.prix*article.quantite_article);
+
+      if(this.articles.indexOf(article)==this.articles.length-1) {
+        this.prixx.push(0);
+      }
+
+      if(this.prixx.includes(0)==true) {
+
+  var sum = this.prixx.reduce((a,b) => a + b, 0)
+  this.totalprix.push(sum)
+  this.a[0]=this.totalprix[0]
+  this.prixfinal=this.a[0];
+
+      }
+
+  }
   }
   zero(){
-    this.total = 0;
-    this.cookieService.set('PanierListe', null);
+
+
+    this.emailValue=this.cookieService.get('Email');
+    this.email.email=this.emailValue
+
+
+
+this.panier()
+
+
   }
-
-
 
 
   ngOnInit() {
+    this.emailValue=this.cookieService.get('Email');
+    this.email.email=this.emailValue
+    this._articleservice.getListePanier(this.email).subscribe( //on soumet l'avis
+    data => this.articles = data
+    )
 
-    this._articleservice.getArticle()
-  .subscribe(data => this.articles = data);
 
-    this.cookieValue = this.cookieService.get('PanierListe');
+   /* this._articleservice.getArticle()
+  .subscribe(data => this.articles = data);*/
+
+    /*this.cookieValue = this.cookieService.get('PanierListe');
     this.listePanier = this.cookieValue.split(',');
-    console.log(this.listePanier);
+    console.log(this.listePanier);*/
 
+  }
+
+  panier(){
+    this._articleservice.DeletePanier(this.email).subscribe( //on soumet l'avis
+    data => window.alert(data.message)
+    )
+  }
+  acheter(){
+    this._articleservice.PasseCommande(this.email).subscribe( //on soumet l'avis
+    data => window.alert(data.message)
+    )
   }
 }

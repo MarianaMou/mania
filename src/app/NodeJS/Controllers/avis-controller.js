@@ -11,14 +11,25 @@ module.exports.avis = function(req, res) {
     today = yyyy + '-' + mm + '-' + dd;
 
 
-    var num_client = req.body.num_client;
+    var email = req.body.email;
     var num_reference = req.body.num_reference;
     var commentaire = req.body.commentaire;
     var nb_etoile = req.body.nb_etoile;
     var date_avis = today;
+    console.log(req.body)
+    var idCli = 0;
+    mysqlConnection.query('SELECT id_client FROM Client WHERE email = ? ',[email],
+    (err, rows, result) => {
+
+      Object.keys(rows).forEach(function(key) {
+        var row = rows[key];
+        idCli = row.id_client;
+console.log(idCli)
+
+    });
 
     var sql = "INSERT INTO Avis(num_client,num_reference,commentaire,nb_etoile,date_avis) VALUES (?)";
-    var values = [num_client, num_reference, commentaire, nb_etoile, date_avis];
+    var values = [idCli, num_reference, commentaire, nb_etoile, date_avis];
     mysqlConnection.query(sql, [values], function(error, results) {
         if (error) {
             res.send({
@@ -36,6 +47,6 @@ module.exports.avis = function(req, res) {
         }
     })
 
-
+  })
 
 }
