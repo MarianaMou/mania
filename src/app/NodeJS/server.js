@@ -34,6 +34,7 @@ var deletePanier= require('./Controllers/DeletePanier-controller')
 var payer= require('./Controllers/PasseCommande-controller')
 var mysqlConnection = require('./config');
 var commande = require('./Controllers/infocommande-controller')
+var NouveauMdp = require('./Controllers/NouveauMdp')
 
 
 app.use(bodyparser.json());
@@ -53,6 +54,7 @@ app.get('/api/catalogue', catalogueController.catalogue)
 app.post('/api/commentaire', commentaireController.commentaire)
 app.post('/api/deleteNow',deletePanier.PanierDelete)
 app.post('/api/payer',payer.payer)
+app.post('/api/mdp',NouveauMdp.NewMotPasse)
 
 app.post('/api/soumettre_avis', avisController.avis)
 app.post('/api/client', infoclientController.infoclient)
@@ -134,4 +136,4 @@ app.delete('/Clients/:id', (req, res) => {
 
 
 
-app.listen(3000, () => console.log('Express server running at port 3000'));
+module.exports = app.listen(3000, () => console.log('Express server running at port 3000'));

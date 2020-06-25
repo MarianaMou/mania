@@ -9,7 +9,7 @@ module.exports.login=function(req,res){
     //res.status(200).send({"message":"Donnée reçu"});
     mysqlConnection.query('SELECT * FROM Client WHERE email = ?',[email], function (error, results, fields) {
       if (error) {
-          res.json({
+          res.send({
             status:false,
             message:'Requête erronée'
             })
@@ -25,15 +25,16 @@ module.exports.login=function(req,res){
             }else{
                 res.send({
                   status:false,
-                  message:"mot de passe ou adresse email incorrect"
+                  message:"mot de passe incorrect"
                  });
+
             }
 
         }
         else{
           res.send({
               status:false,
-            message:"mot de passe ou adresse email incorrect"
+            message:"email incorrect"
           });
         }
       }

@@ -7,11 +7,11 @@
 
     <mat-form-field class="example-full-width" >
       <mat-label>Actuel mot de passe</mat-label>
-      <input type="text" matInput>
+      <input type="text" matInput #amdp="ngModel" [class.is-invalid]="amdp.invalid && amdp.touched" required class="form-control" name="mdp" [(ngModel)]="mdp.actuel_mdp">
   </mat-form-field>
   <mat-form-field class="example-full-width">
       <mat-label>Nouveau mot de passe</mat-label>
-      <input type="text" matInput>
+      <input type="text" matInput #nmdp="ngModel" [class.is-invalid]="nmdp.invalid && nmdp.touched" required class="form-control" name="mdp" [(ngModel)]="mdp.nouveau_mdp">
   </mat-form-field>
 
   <button (click)="return()" class ="bou1"mat-button>Retour</button>

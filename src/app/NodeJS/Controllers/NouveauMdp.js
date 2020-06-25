@@ -1,7 +1,6 @@
 var mysqlConnection = require('./../config');
 
 
-
 module.exports.NewMotPasse = function(req, res) {
 var email = req.body.email;
 var actuel = req.body.actuel_mdp;

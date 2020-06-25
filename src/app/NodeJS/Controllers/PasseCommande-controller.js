@@ -64,11 +64,11 @@ var date = today;
            mysqlConnection.query('SELECT num_commande FROM Commande WHERE id_client = ? ',[idClient],
       (err, rows, result) => {
         Object.keys(rows).forEach(function(key) {
-          
+
           var row = rows[key];
           //idClient = row.id_client;
          SetNumcommande(row.num_commande)
-         console.log("voilaaaa"+vrai_num_commande);
+        
          var sql3 = "INSERT INTO Detailcommande(num_commande,quantite_article,num_reference) VALUES (?) " //ajouter l'adresse dans Client
          var values3 = [vrai_num_commande,quantite,num_ref];
              mysqlConnection.query(sql3,[values3], function(err, result) {

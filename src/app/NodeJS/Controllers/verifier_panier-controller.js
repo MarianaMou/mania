@@ -43,10 +43,9 @@ var num_reference_panier='';
 
 
       if(num_reference_panier==nunum) {
-        console.log(num_reference_panier);
-        console.log("ici")
+       
         quantite_article+=1;
-        console.log(id_panier)
+
         mysqlConnection.query('UPDATE Panier SET quantite_article = ? WHERE id_panier = ? ',[quantite_article,id_panier],
         (err, rows, results) => {
 console.log(rows)
@@ -54,7 +53,7 @@ console.log(rows)
         });
       }
       else if(num_reference_panier!=nunum){
-        console.log("ici aussi")
+
         quantite_article=1;
         var sql = "INSERT INTO Panier(num_reference,id_client,quantite_article) VALUES (?)";
         var values = [num_reference,idClient,quantite_article];

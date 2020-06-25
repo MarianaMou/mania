@@ -14,6 +14,7 @@ import{Commandes} from '../Commande/Commandes'
 import{Infomodifie} from './../Profil/Infomodifie'
 import{ContenuPanier} from './../Article/contenuPanier'
 import{TableCommande} from './../Panier/EmailClient'
+import{NewMdp} from './../my-dialog/MotPasse'
 
 
 const Options ={
@@ -36,6 +37,9 @@ export class ConnexionSService {
     return this.http.post<any>(this._url+'login',client);
     }
 
+    UpdateMdp(mdp:NewMdp) {
+      return this.http.post<any>(this._url+'mdp',mdp);
+    }
     InscriptionCli(newCli:NewClient) {
       return this.http.post<any>(this._url+'register',newCli);
     }
