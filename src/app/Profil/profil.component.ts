@@ -1,8 +1,7 @@
-import { Component, OnInit,TemplateRef} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {ConnexionSService} from './../Services/connexion-s.service';
 import { CookieService } from 'ngx-cookie-service';
-import {ChangeDetectorRef} from '@angular/core';
-import {Observable} from 'rxjs';
+
 import{EmailCli} from './EmailCli'
 import{Infomodifie} from './Infomodifie'
 

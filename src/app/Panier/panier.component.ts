@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ConnexionSService} from './../Services/connexion-s.service';
 import { CookieService } from 'ngx-cookie-service';
-import {ChangeDetectorRef} from '@angular/core';
-import {Observable} from 'rxjs';
 import{TableCommande} from './EmailClient'
 
 @Component({
@@ -52,15 +50,11 @@ export class panierComponent implements OnInit {
   }
   }
   zero(){
-
-
     this.emailValue=this.cookieService.get('Email');
     this.email.email=this.emailValue
-
-
-
-this.panier()
-
+    this._articleservice.DeletePanier(this.email).subscribe( //on soumet l'avis
+    data => window.alert(data.message)
+    )
 
   }
 
@@ -73,23 +67,9 @@ this.panier()
     )
 
 
-   /* this._articleservice.getArticle()
-  .subscribe(data => this.articles = data);*/
-
-    /*this.cookieValue = this.cookieService.get('PanierListe');
-    this.listePanier = this.cookieValue.split(',');
-    console.log(this.listePanier);*/
 
   }
 
-  panier(){
-    this._articleservice.DeletePanier(this.email).subscribe( //on soumet l'avis
-    data => window.alert(data.message)
-    )
-  }
-  acheter(){
-    this._articleservice.PasseCommande(this.email).subscribe( //on soumet l'avis
-    data => window.alert(data.message)
-    )
-  }
+
+
 }

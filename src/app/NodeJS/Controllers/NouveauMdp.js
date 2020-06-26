@@ -11,15 +11,16 @@ var mdp =""
   mysqlConnection.query('SELECT mot_de_passe FROM Client WHERE email = ? ',[email],
       (err, rows, result) => {
 
-        Object.keys(rows).forEach(function(key) {
+
+          if(!err && rows!=[]){
+          Object.keys(rows).forEach(function(key) {
           var row = rows[key];
           mdp = row.mot_de_passe;
 
 
       });
-          if (mdp==actuel && !err) {
-            let data = [nouveau,email]
-
+          if (mdp==actuel) {
+let data = [nouveau,email]
 let sql = 'UPDATE Client SET mot_de_passe = ? WHERE email=?';
   mysqlConnection.query(sql,data,
       (err, rows, results) => {
@@ -31,12 +32,18 @@ let sql = 'UPDATE Client SET mot_de_passe = ? WHERE email=?';
           else {console.log(err);}
 
       });
-            //res.send(rows);
+
           }
-          else
-              res.send({
-                status:false,
-                message:"Mot de passe incorrect"
-                })
+          else  {
+            res.send({
+
+              status:false,
+              message:"Mot de passe incorrect"
+              })
+          }
+
+              }
+
+
       });
 }

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import {NewClient} from './../new-client';
-import { Validators } from '@angular/forms';
 import {ConnexionSService} from './../Services/connexion-s.service'
 
 

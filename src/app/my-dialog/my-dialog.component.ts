@@ -14,6 +14,10 @@ export class MyDialogComponent implements OnInit {
  emailValue = "";
  mdp = new NewMdp("","","")
  Resultat = false;
+ passwordType:string='password';
+ passwordShown:boolean=false;
+ passwordType1:string='password';
+ passwordShown1:boolean=false;
   constructor(public dialogRef:MatDialogRef<MyDialogComponent>,
     @Inject(MAT_DIALOG_DATA)public data:any,private _articleservice : ConnexionSService, private cookieService: CookieService) { }
 
@@ -30,9 +34,27 @@ export class MyDialogComponent implements OnInit {
      error=> console.error('erreur',error),
     );
 
-
-
   }
+  togglePassword(){
+  if(this.passwordShown) {
+    this.passwordShown=false;
+    this.passwordType='password';
+  }
+  else {
+    this.passwordShown=true;
+    this.passwordType='text'
+  }
+  }
+  togglePassword1(){
+    if(this.passwordShown1) {
+      this.passwordShown1=false;
+      this.passwordType1='password';
+    }
+    else {
+      this.passwordShown1=true;
+      this.passwordType1='text'
+    }
+    }
 
   onCondition(){
     if(this.Resultat==true) {

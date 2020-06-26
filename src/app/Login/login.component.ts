@@ -3,8 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import {Client} from './../client';
 import { Validators } from '@angular/forms';
 import {ConnexionSService} from './../Services/connexion-s.service'
-import { isString } from 'util';
-import { RouterLink, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service'; // cookies
 
 

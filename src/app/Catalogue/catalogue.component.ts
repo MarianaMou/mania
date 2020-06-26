@@ -3,7 +3,6 @@ import {  Input } from '@angular/core';
 import {OnInit} from '@angular/core';
 import {ConnexionSService} from './../Services/connexion-s.service';
 import { ActivatedRoute } from '@angular/router';
-import {Client} from './../client';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
